@@ -1,7 +1,10 @@
 import {Link} from 'react-router-dom';
 
 
-export default function Navbar () {
+export default function Navbar ({setDisplay,display}) {
+    const afficher = () =>{
+        setDisplay(true)
+    }
     return(
         <div>
         <header>
@@ -31,11 +34,12 @@ export default function Navbar () {
                <button id="btn--open--login">Connexion</button>
                <button id="btn--open--register">Inscription</button>
                
+               <div className={display ? "sidebar show--sidebar" : "sidebar"}></div>
                <div className='icons'>
                <div className='icon--search'>
                <i class="fa-solid fa-magnifying-glass"></i>
                </div>
-               <div className='icon--menu'>
+               <div className='icon--menu' onClick={afficher}>
                <i class="fa-solid fa-bars"></i>
                </div>
                </div>

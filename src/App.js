@@ -19,7 +19,7 @@ function App() {
     {/* <Route path='/details/:id' element={<MovieDetails movies ={movies} setSearchFilter={setSearchFilter}/>} /> */}
     <Route path='/articles' element={<Articles/>} />
     <Route path='/commandes' element={<Commandes/>} />
-    <Route path='/details' element={<Details/>} />
+    <Route path='/details/:id' element={<Details/>} />
     <Route path='/profil' element={<Profil/>} />
     <Route path='/password' element={<Password/>} />
     <Route path='/paiement' element={<Paiement/>} />
