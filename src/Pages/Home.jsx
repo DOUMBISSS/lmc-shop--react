@@ -85,6 +85,72 @@ export default function Home (){
                         </div>
                     </div>
 
+            {/* <div className="login--part--connexion">
+                <div className="login--part--container">
+                    <div className="login--part--container--header">
+                        <p className="name--log">Connexion</p>
+                        <div className="btn--close--login">X</div>
+                    </div>
+                    <div className="login--part--container--content">
+                        <p>Vous n'avez pas de compte ? <span className="new">Inscrivez-vous</span></p> 
+
+                        <div className="type--of--connexion">
+                            <div className="google">
+                                <p>Connexion avec google</p>
+                            </div>
+                            <div className="facebook">
+                                <p>Connexion avec facebook</p>
+                            </div>
+                        </div>
+                        <p>ou</p>
+
+                        <div className="block---connexion">
+                            <input type="email" name="" id="email" placeholder="Adresse email"/>
+                            <input type="password" name="" id="password" placeholder="Mot de passe"/>
+                        <button id="btn--connexion">Se connecter</button>
+                        </div>
+                        <p className="password" >Mot de passe oublie </p>
+                    </div>
+
+                </div>
+                
+            </div> 
+
+            <div className="register--part">
+                <div className="login--part--container">
+                    <div className="login--part--container--header">
+                        <p className="name--log">Inscription</p>
+                        <div className="btn--close--register">X</div>
+                    </div>
+                    <div className="login--part--container--content">
+                        <p>Vous n'avez pas de compte ? <span className="new">Connectez-vous</span></p> 
+
+                        <div className="type--of--connexion">
+                            <div className="google">
+                                <p>Connexion avec google</p>
+                            </div>
+                            <div className="facebook">
+                                <p>Connexion avec facebook</p>
+                            </div>
+                        </div>
+                        <p>ou</p>
+
+                        <div className="block---connexion">
+                            <input type="text" name="" placeholder="Nom"/>
+                            <input type="text" name="" id="" placeholder="Prenom"/>
+                            <input type="email" name="" id="email" placeholder="Adresse email"/>
+                            <input type="password" name="" id="password" placeholder="Mot de passe"/>
+                            <select name="" id="adresse"><option value="">Pays</option></select>
+                            <select name="" id="adresse"><option value="">Ville</option></select>
+                        <button id="btn--connexion">S'inscrire</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div> */}
+
+
+
             <div className="aside">
             <div className={cartshop ? "cart--container OpenCart" : "cart--container"}></div>
                 <div className="cart--icon" onClick={showCart}>
