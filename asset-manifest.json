@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/lmc-shop--react/static/css/main.3af2cc34.css",
-    "main.js": "/lmc-shop--react/static/js/main.eb6d0db6.js",
+    "main.js": "/lmc-shop--react/static/js/main.d43bb67c.js",
     "static/js/787.c7962bd8.chunk.js": "/lmc-shop--react/static/js/787.c7962bd8.chunk.js",
     "index.html": "/lmc-shop--react/index.html",
     "main.3af2cc34.css.map": "/lmc-shop--react/static/css/main.3af2cc34.css.map",
-    "main.eb6d0db6.js.map": "/lmc-shop--react/static/js/main.eb6d0db6.js.map",
+    "main.d43bb67c.js.map": "/lmc-shop--react/static/js/main.d43bb67c.js.map",
     "787.c7962bd8.chunk.js.map": "/lmc-shop--react/static/js/787.c7962bd8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3af2cc34.css",
-    "static/js/main.eb6d0db6.js"
+    "static/js/main.d43bb67c.js"
   ]
 }
