@@ -11,7 +11,7 @@ import { store } from './Redux/index';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-  <BrowserRouter>
+  <BrowserRouter basename='/lmc-shop--react'>
   <React.StrictMode>
     <App />
   </React.StrictMode>
