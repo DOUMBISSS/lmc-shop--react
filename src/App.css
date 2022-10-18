@@ -1902,23 +1902,10 @@ border-radius: 10px;
   cursor: pointer;
  }
  /*----------------------------------Login part connexion----------*/
- .login--part--connexion{
+.login--part--connexion{
   position: absolute;
   width: 480px;
-  height: 440px;
-  z-index: 10000;
-  border-radius: 5px;
-  background-color: white;
-  border: 1px solid #9b9ca9;
-  top: 0;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-}
-/* .login--part--connexion{
-  position: absolute;
-  width: 480px;
-  height: 440px;
+  height: 600px;
   z-index: 10000;
   border-radius: 5px;
   background-color: white;
@@ -1928,18 +1915,18 @@ border-radius: 10px;
   align-items: center;
   justify-content: center;
   border: 1px solid #9b9ca9;
-  top: 0;
+  top: 50px;
   right: 0;
   left: 0;
   margin: 0 auto;
   transition: ease-in-out 1s;
-} */
+}
 
-/* .show.login--part--connexion{
+.show--login--part--connexion{
 visibility: visible;
 transform: translateX(0%);
 transition: ease-in-out 1s;
-} */
+}
 .login--part--container{
   width: 90%;
   height: 90%;
@@ -2069,7 +2056,7 @@ visibility: hidden;
 transform: translateY(-200%);
 transition: ease-in-out 1s;
 }
-.shows.register--part{
+.shows--register--part{
 visibility: visible;
 transform: translateY(0%);
 transition: ease-in-out 1s;

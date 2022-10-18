@@ -85,7 +85,7 @@ export default function Home (){
                         </div>
                     </div>
 
-            {/* <div className="login--part--connexion">
+            <div className="login--part--connexion">
                 <div className="login--part--container">
                     <div className="login--part--container--header">
                         <p className="name--log">Connexion</p>
@@ -147,7 +147,7 @@ export default function Home (){
                     </div>
 
                 </div>
-            </div> */}
+            </div>
 
 
 

@@ -1,10 +1,22 @@
+import { useState } from 'react';
 import {Link} from 'react-router-dom';
 
 
 export default function Navbar ({setDisplay,display}) {
+    const [logConnexion , setLogConnexion] = useState(false);
+    const [Register,setRegister] = useState (false);
+
     const afficher = () =>{
         setDisplay(true)
     }
+    const ShowLogCo = () => {
+        setLogConnexion (true)
+    }
+
+    const showRegister = ()=>{
+        setRegister (true)
+    }
+
     return(
         <div>
         <header>
@@ -30,9 +42,10 @@ export default function Navbar ({setDisplay,display}) {
                        <option value="">USD</option>
                        <option value="">STD</option>
                    </select>
-
-               <button id="btn--open--login">Connexion</button>
-               <button id="btn--open--register">Inscription</button>
+            <div className={logConnexion ? "login--part--connexion show--login--part--connexion" : "login--part--connexion"}></div>
+               <button id="btn--open--login" onClick={ShowLogCo} >Connexion</button>
+            <div className={Register ? "register--part shows--register--part" : "register--part"}></div>
+               <button id="btn--open--register" onClick={showRegister}>Inscription</button>
                
                <div className={display ? "sidebar show--sidebar" : "sidebar"}></div>
                <div className='icons'>
