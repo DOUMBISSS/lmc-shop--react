@@ -9,6 +9,7 @@
   --blue : #1320DC;
   --text-gray : #9b9ca9;
   --pink : #FB0A72;
+  --domain : "lmc-shop--react/";
 }
 
 html {
@@ -162,7 +163,7 @@ a:hover{
 .main--part{
   width: 100%;
   height: 100vh;
-  background:("Groupe-45.png");
+  background:url("images/Groupe-45.png");
   background-color: black;
   background-size: cover;
   background-position: center;

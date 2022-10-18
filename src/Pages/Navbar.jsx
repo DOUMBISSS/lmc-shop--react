@@ -63,10 +63,10 @@ export default function Navbar ({setDisplay,display}) {
        
    </header>
    <nav>
-       <li><Link className='liste' to="/articles">Categories</Link></li>
-       <li><Link className='liste' to="/articles">Vetements</Link></li>
-       <li><Link className='liste' to="/accessoires">Accessoires</Link></li>
-       <li><Link className='liste' to="/articles">Chaussures</Link></li>
+  
+       <li><Link className='liste' to="/articles-category/Vetements">Vetements</Link></li>
+       <li><Link className='liste' to="/articles-category/Accessoires">Accessoires</Link></li>
+       <li><Link className='liste' to="/articles-category/Chaussures">Chaussures</Link></li>
    </nav>
    </div>
     )
