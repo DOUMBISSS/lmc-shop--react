@@ -5,6 +5,7 @@ export function getHomeArticle(articles){
     }
 }
 
+
 export function getCategoryArticles(articles){
     return{
         type:"GET-CAT-ARTICLES",
@@ -12,9 +13,10 @@ export function getCategoryArticles(articles){
     }
 }
 
-export function getAccessoires(articles){
+export function getCategory (categories){
     return{
-        type:"GET-ACCESSOIRES-ARTICLES",
-        payload :articles
+        type : "GET-CATEGORIES",
+        payload : categories
     }
 }
+

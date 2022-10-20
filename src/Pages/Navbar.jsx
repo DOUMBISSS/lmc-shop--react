@@ -1,24 +1,33 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import {Link} from 'react-router-dom';
-import { getCategoryArticles } from '../Redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import {Link, useParams} from 'react-router-dom';
+import { getCategory, getCategoryArticles } from '../Redux/actions';
 
 
 export default function Navbar ({setDisplay,display}) {
+    const categories = useSelector(state => state.categoryReducer.categories);
+
+    let slug = useParams().slug;
+
     const dispatch = useDispatch("")
 
     useEffect(() => {  
         fetch('https://fakestoreapi.com/products/categories')
         .then(res => res.json())
-        .then(categoryArticle => {dispatch(getCategoryArticles(categoryArticle))
-            })}, []);
+        .then(categories => {
+            dispatch(getCategory(categories))
+            })
+        }, []);
 
-        // useEffect(() => {  
-        //     fetch('https://fakestoreapi.com/products/category/jewelery')
-        //     .then(res => res.json())
-        //     .then(categoryArticle => {dispatch(getCategoryArticles(categoryArticle))
-        //     })},[]);
+    useEffect(() =>{
 
+        fetch(`https://fakestoreapi.com/products/category/${slug}`)
+        .then(res => res.json())
+        .then(categoryArticles => { 
+            dispatch(getCategoryArticles(categoryArticles))
+            })
+
+    },[slug])
 
             
     const [logConnexion , setLogConnexion] = useState(false);
@@ -82,10 +91,7 @@ export default function Navbar ({setDisplay,display}) {
    </header>
    <nav>
   
-       <li><Link className='liste' to="/category/Vetements">Vetements</Link></li>
-       <li><Link className='liste' to="/category/Accessoires">Accessoires</Link></li>
-       <li><Link className='liste' to="/category/jewelery">Jewerly</Link></li>
-       <li><Link className='liste' to="/category/electronics">electronics</Link></li>
+       {categories.map((categorie) => <li><Link className='liste' to={`/category/${categorie}`}>{categorie}</Link></li>) }
    </nav>
    </div>
     )

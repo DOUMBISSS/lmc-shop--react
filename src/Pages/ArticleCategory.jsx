@@ -8,21 +8,10 @@ import Navbar from "./Navbar";
 
 
 export default function ArticleCategory(){
-    const slug = useParams.slug;
+    const slug = useParams().slug;
     const categoryArticles = useSelector (state => state.categoryReducer.categoryArticles);
-    const dispatch = useDispatch("");
+    
 
-    // useEffect(() => {
-    //     fetch('https://fakestoreapi.com/products')
-    //     .then(res => res.json())
-    //     .then(categoryArticle => {dispatch(getCategoryArticles(categoryArticle))
-    //     })}, []);
-
-        useEffect(() => {  
-            fetch('https://fakestoreapi.com/products/category/jewelery')
-            .then(res => res.json())
-            .then(categoryArticle => {dispatch(getCategoryArticles(categoryArticle))
-            })},[]);
 
     return (
         <div>
@@ -30,7 +19,7 @@ export default function ArticleCategory(){
             <div className="box--container">
             <div className="first--part">
                  <div className="first--part--blur">
-                 <p>Vêtements</p>
+                 <p>{slug}</p>
                 </div>
             </div>
 
@@ -51,8 +40,8 @@ export default function ArticleCategory(){
                             </div>
 
                             <div className="descrption--product">
-                                <p className="prices"> 1500 F CFA<span> / unite</span></p>
-                                <p className="prices"> 1500 F CFA<span> / a partir de 5 unités</span></p>
+                                <p className="prices"> {categoryArticle.price}<span> / unite</span></p>
+                                <p className="prices"> {categoryArticle.price}<span> / a partir de 5 unités</span></p>
                             </div>
                             <div className="button--block">
                                 <button className="btn--buy"><a href="article-details.html">Achetez</a></button>
@@ -68,7 +57,7 @@ export default function ArticleCategory(){
             )};
                     
 
-                    <div  className="card">
+                    {/* <div  className="card">
                     <div className="card--product">
                         <a href="article-details.html">
                         <div className="card--product--image">
@@ -96,7 +85,7 @@ export default function ArticleCategory(){
                     </div>
 
 
-                </div>
+                </div> */}
                 </div>
             </div>
                 <div className="more">
