@@ -302,14 +302,14 @@ h4{
 }
 .card--product--image{
   width: 100%;
-  height: 55%;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .card--product--image--box{
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
 }
 .card--product--image:hover img{
   transform: scale(0.9);
@@ -328,16 +328,17 @@ h4{
 .card--product--content{
   width: 100%;
   height: 45%;
+  padding: 1rem;
 }
 .name--product{
   width: 100%;
-  height: 30%;
+  height: 35%;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 .descrption--product{
   width: 100%;
-  height: 35%;
+  height: 30%;
 }
 .prices{
   font-weight: bold;
@@ -355,7 +356,7 @@ span{
   justify-content: space-between;
 }
 .btn--buy{
-  width: 70%;
+  width: 73%;
   height: 90%;
   border: 1px solid var(--blue);
   background-color: var(--blue);
@@ -371,7 +372,7 @@ span{
   color: var(--blue);
 }
 .btn--add{
-  width: 25%;
+  width: 20%;
   height: 90%;
   border: 1px solid var(--blue);
   border-radius: 5px;

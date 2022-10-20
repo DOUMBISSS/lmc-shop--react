@@ -54,7 +54,7 @@ export default function ArticleCategory(){
 
 
                 </div>
-            )};
+            )}
                     
 
                     {/* <div  className="card">
