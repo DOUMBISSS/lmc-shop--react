@@ -11,21 +11,25 @@ import { useState } from 'react';
 export default function Home (){
 
     const homeArticles = useSelector(state => state.homeArticleReducer.homeArticles);
+    const categories = useSelector(state => state.categoryReducer.categories);
     const dispatch = useDispatch("");
 
     const [display ,setDisplay] = useState(false);
     const [filter,setFilter] = useState(false);
-    const [cartshop , setCartShop] = useState(false);
+    const [cartShop , setCartShop] = useState(false);
 
     const affi = ()=> {
         setDisplay (false)
+    }
+    const closeFilter = ()=> {
+        setFilter (false)
     }
     const showFilter =()=>{
         setFilter (true)
     }
 
     const showCart = ()=>{
-        setCartShop(true)
+        setCartShop(true);
     }
     const closeCart = ()=>{
         setCartShop(false)
@@ -75,13 +79,12 @@ export default function Home (){
                 </div>
             </div>
 
-                <div className='sidebar'>
+
+                <div className={display ? "sidebar show--sidebar" : "sidebar"}>
                     <div className='sidebar--menu'>
                         <div className='btn--close--sidebar' onClick={affi}>X</div>
-                            <p><li><Link className='liste' to="/articles">Categories</Link></li></p>
-                            <p><li><Link className='liste' to="/articles">Vetements</Link></li></p>
-                            <p><li><Link className='liste' to="/accessoires">Accessoires</Link></li></p>
-                            <p><li><Link className='liste' to="/articles">Chaussures</Link></li></p>
+                    {categories.map((categorie,i) => <p><li key={i} ><Link className='liste' to={`/category/${categorie}`}>{categorie}</Link></li></p>
+                    ) }
                         </div>
                     </div>
 
@@ -110,7 +113,7 @@ export default function Home (){
                         <button id="btn--connexion">Se connecter</button>
                         </div>
                         <p className="password" >Mot de passe oublie </p> */}
-                        <p>fqfqfqf</p>
+
                     </div>
 
                 </div>
@@ -153,55 +156,56 @@ export default function Home (){
 
 
             <div className="aside">
-            <div className={cartshop ? "cart--container OpenCart" : "cart--container"}></div>
-                <div className="cart--icon" onClick={showCart}>
-                    <i className="fa-solid fa-bag-shopping"></i>
-                    <div className="counter">1</div>
-                </div>
-                <div className="cart--container">
-                     {/* <h3>Your card is empty</h3> */}
-                    <div className="cart--container--block">
-                        <div className="cart--container--header">
-                            <div className="cart--description">
-                                <i className="fa-solid fa-bag-shopping"></i>
-                                <p className="numbers--articles">1 articles</p>
-                            </div>
-                            <div className="btn--close" onClick={closeCart}>
-                                <i className="fa-solid fa-xmark"></i>
-                            </div>
-                        </div>
-                    
-                        <div className="cart--container--content">
-                            <div className="cart--articles">
-                                <div className="button-block">
-                                    <div className="handle--quantity">
-                                    <div className="minus"><h5>-</h5></div>
-                                    <div className="qty"><h5>1</h5></div>
-                                    <div className="plus"><h5>+</h5></div>
-                                    </div>
+                <div >
+                    <div className="cart--icon" onClick={showCart}>
+                        <i className="fa-solid fa-bag-shopping"></i>
+                        <div className="counter">1</div>
+                    </div>
+                    <div className={cartShop ? "cart--container OpenCart" : "cart--container"}>
+                        {/* <h3>Your card is empty</h3> */}
+                        <div className="cart--container--block">
+                            <div className="cart--container--header">
+                                <div className="cart--description">
+                                    <i className="fa-solid fa-bag-shopping"></i>
+                                    <p className="numbers--articles">1 articles</p>
                                 </div>
-                    
-                                <div className="cart--articles--descriptions">
-                                    <div className="block--articles">
-                                        <div className="articles">
-                                            <img src="images/jupe.png" alt=""/>
-                                        </div>
-                    
-                                        <div className="articles--details">
-                                            <p className="names--articles">Jupe volante</p>
-                                            <p className="price--articles"> 2000 F</p>
-                                            <p className="quantity">3 unités</p>
-                                        </div>
-                                    </div>
-                                </div>
-                    
-                                <div className="btn--remove--article">
+                                <div className="btn--close" onClick={closeCart}>
                                     <i className="fa-solid fa-xmark"></i>
                                 </div>
                             </div>
+                        
+                            <div className="cart--container--content">
+                                <div className="cart--articles">
+                                    <div className="button-block">
+                                        <div className="handle--quantity">
+                                        <div className="minus"><h5>-</h5></div>
+                                        <div className="qty"><h5>1</h5></div>
+                                        <div className="plus"><h5>+</h5></div>
+                                        </div>
+                                    </div>
+                        
+                                    <div className="cart--articles--descriptions">
+                                        <div className="block--articles">
+                                            <div className="articles">
+                                                <img src="images/jupe.png" alt=""/>
+                                            </div>
+                        
+                                            <div className="articles--details">
+                                                <p className="names--articles">Jupe volante</p>
+                                                <p className="price--articles"> 2000 F</p>
+                                                <p className="quantity">3 unités</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <div className="btn--remove--article">
+                                        <i className="fa-solid fa-xmark"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+        
                     </div>
-    
                 </div>
             </div>
 
@@ -212,17 +216,18 @@ export default function Home (){
                 </div>
 
                 <div className="right--part">
-                <div className={filter ? "filterbar show--filterbar" : "filterbar"}></div>
                     <div className="filter"onClick={showFilter}>
                         <i class="fa-solid fa-arrow-up-wide-short"></i>
                         <p>Filtre</p>
                     </div>
-                    
-                <div className='filterbar'>
-                    <div className='btn--close--sidebar' onClick={affi}>X</div>
-                    <h4>Nouvel arrivage</h4>
-                    <h4>Top ventes</h4>
+                <div className={filter ? "filterbar show--filterbar" : "filterbar"}>
+                        <div className='filterbar--content'>
+                        <div className='btn--close--sidebar'onClick={closeFilter}> <i className="fa-solid fa-xmark"></i></div>
+                            <h4>Nouvel arrivage</h4>
+                            <h4>Top ventes</h4>
+                        </div>
                 </div>
+                    
 
             <div className="right--part--content">
             {homeArticles.map((homeArticle) => <div key={homeArticle.id} className="card">

@@ -74,24 +74,25 @@ export default function Navbar ({setDisplay,display}) {
             <div className={Register ? "register--part shows--register--part" : "register--part"}></div>
                <button id="btn--open--register" onClick={showRegister}>Inscription</button>
                
-               <div className={display ? "sidebar show--sidebar" : "sidebar"}></div>
                <div className='icons'>
                <div className='icon--search'>
-               <i class="fa-solid fa-magnifying-glass"></i>
+               <i className="fa-solid fa-magnifying-glass"></i>
                </div>
                <div className='icon--menu' onClick={afficher}>
-               <i class="fa-solid fa-bars"></i>
+               <i className="fa-solid fa-bars"></i>
                </div>
                </div>
+
+
            </div>
            
        </div>
-       
+      
        
    </header>
    <nav>
   
-       {categories.map((categorie) => <li><Link className='liste' to={`/category/${categorie}`}>{categorie}</Link></li>) }
+       {categories.map((categorie,i) => <li key={i} ><Link className='liste' to={`/category/${categorie}`}>{categorie}</Link></li>) }
    </nav>
    </div>
     )
