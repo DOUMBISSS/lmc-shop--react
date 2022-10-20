@@ -891,7 +891,6 @@ footer{
     background-color: white;
     transform: translateY(-200%);
     display: flex;
-    visibility: visible;
     align-items: center;
     justify-content: center;
     border: 1px solid #9b9ca9;
@@ -901,9 +900,8 @@ footer{
     margin: 0 auto;
     transition: ease-in-out 1s;
  }
- .show.login--part--connexion{
-  visibility: visible;
-  transform: translateX(0%);
+ .show--login--part--connexion{
+  transform: translateY(0%);
   transition: ease-in-out 1s;
  }
  .login--part--container{
@@ -1031,12 +1029,10 @@ footer{
   align-items: center;
   justify-content: center;
   border: 1px solid #9b9ca9;
-  visibility: hidden;
   transform: translateY(-200%);
   transition: ease-in-out 1s;
  }
  .shows.register--part{
-  visibility: visible;
   transform: translateY(0%);
   transition: ease-in-out 1s;
 }

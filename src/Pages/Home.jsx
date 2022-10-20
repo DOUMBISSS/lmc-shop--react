@@ -57,19 +57,19 @@ export default function Home (){
                         <div className="cols">
                             <p>Hommes</p>
                             {/* <a href="Articles.html"></a><p id="mores">voir plus </p></a>  */}
-                                <img src="xbanner-02.jpg.pagespeed.ic.MQuZq6F18q.webp" alt=""/>      
+                                <img src={`${process.env.REACT_APP_DOMAIN}xbanner-02.jpg.pagespeed.ic.MQuZq6F18q.webp`} alt=""/>      
                         </div>
 
                         <div className="cols">
                             <p>Femmes</p>
                              {/* <a href="Articles.html"><p id="mores">voir plus </p></a>  */}
-                            <img src="xbanner-01.jpg.pagespeed.ic.Uj5FE94mgU.webp " alt=""/>
+                            <img src={`${process.env.REACT_APP_DOMAIN}xbanner-01.jpg.pagespeed.ic.Uj5FE94mgU.webp`} alt=""/>
                         </div>
 
                         <div className="cols">
                             <p>Accessoires</p>
                             {/* <!-- <a href="Articles.html"><p id="mores">voir plus </p></a> */}
-                            <img src="xbanner-03.jpg.pagespeed.ic.1rqLomOaMb.webp " alt=""/>
+                            <img src={`${process.env.REACT_APP_DOMAIN}xbanner-03.jpg.pagespeed.ic.1rqLomOaMb.webp`} alt=""/>
                         </div>
                         
                 </div>
@@ -92,7 +92,7 @@ export default function Home (){
                         <div className="btn--close--login">X</div>
                     </div>
                     <div className="login--part--container--content">
-                        <p>Vous n'avez pas de compte ? <span className="new">Inscrivez-vous</span></p> 
+                        {/* <p>Vous n'avez pas de compte ? <span className="new">Inscrivez-vous</span></p> 
 
                         <div className="type--of--connexion">
                             <div className="google">
@@ -109,7 +109,8 @@ export default function Home (){
                             <input type="password" name="" id="password" placeholder="Mot de passe"/>
                         <button id="btn--connexion">Se connecter</button>
                         </div>
-                        <p className="password" >Mot de passe oublie </p>
+                        <p className="password" >Mot de passe oublie </p> */}
+                        <p>fqfqfqf</p>
                     </div>
 
                 </div>

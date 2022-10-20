@@ -15,14 +15,12 @@ function App() {
     <div>
     <Routes>
     <Route path="/" element={<Home/>}/>
-    {/* <Route path='/details/:id' element={<MovieDetails movies ={movies} setSearchFilter={setSearchFilter}/>} /> */}
-
     <Route path='/commandes' element={<Commandes/>} />
     <Route path='/details/:id' element={<Details/>} />
     <Route path='/profil' element={<Profil/>} />
     <Route path='/password' element={<Password/>} />
     <Route path='/paiement' element={<Paiement/>} />
-    <Route path='/articles-category/:slug' element={<ArticleCategory/>} />
+    <Route path='/category/:slug' element={<ArticleCategory/>} />
     
   </Routes>
     </div>

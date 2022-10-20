@@ -12,11 +12,17 @@ export default function ArticleCategory(){
     const categoryArticles = useSelector (state => state.categoryReducer.categoryArticles);
     const dispatch = useDispatch("");
 
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-        .then(res => res.json())
-        .then(categoryArticle => {dispatch(getCategoryArticles(categoryArticle))
-        })}, []);
+    // useEffect(() => {
+    //     fetch('https://fakestoreapi.com/products')
+    //     .then(res => res.json())
+    //     .then(categoryArticle => {dispatch(getCategoryArticles(categoryArticle))
+    //     })}, []);
+
+        useEffect(() => {  
+            fetch('https://fakestoreapi.com/products/category/jewelery')
+            .then(res => res.json())
+            .then(categoryArticle => {dispatch(getCategoryArticles(categoryArticle))
+            })},[]);
 
     return (
         <div>
