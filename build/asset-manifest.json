@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/lmc-shop--react/static/css/main.778cc92c.css",
-    "main.js": "/lmc-shop--react/static/js/main.946c1011.js",
+    "main.css": "/lmc-shop--react/static/css/main.1bbdc6fa.css",
+    "main.js": "/lmc-shop--react/static/js/main.0455ea2a.js",
     "static/js/787.c7962bd8.chunk.js": "/lmc-shop--react/static/js/787.c7962bd8.chunk.js",
     "static/media/Groupe-45.png": "/lmc-shop--react/static/media/Groupe-45.4d3d0300985e907e4edf.png",
     "index.html": "/lmc-shop--react/index.html",
-    "main.778cc92c.css.map": "/lmc-shop--react/static/css/main.778cc92c.css.map",
-    "main.946c1011.js.map": "/lmc-shop--react/static/js/main.946c1011.js.map",
+    "main.1bbdc6fa.css.map": "/lmc-shop--react/static/css/main.1bbdc6fa.css.map",
+    "main.0455ea2a.js.map": "/lmc-shop--react/static/js/main.0455ea2a.js.map",
     "787.c7962bd8.chunk.js.map": "/lmc-shop--react/static/js/787.c7962bd8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.778cc92c.css",
-    "static/js/main.946c1011.js"
+    "static/css/main.1bbdc6fa.css",
+    "static/js/main.0455ea2a.js"
   ]
 }
