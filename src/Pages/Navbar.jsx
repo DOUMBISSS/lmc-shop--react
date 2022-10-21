@@ -4,7 +4,7 @@ import {Link, useParams} from 'react-router-dom';
 import { getCategory, getCategoryArticles } from '../Redux/actions';
 
 
-export default function Navbar ({setDisplay,setLogConnexion,setRegister}) {
+export default function Navbar ({setDisplay,setLogConnexion,setRegister,setSearchBar}) {
     const categories = useSelector(state => state.categoryReducer.categories);
 
     let slug = useParams().slug;
@@ -29,7 +29,7 @@ export default function Navbar ({setDisplay,setLogConnexion,setRegister}) {
 
             
 
-    const afficher = () =>{
+    const showMenu = () =>{
         setDisplay(true)
     }
     const ShowLogCo = () => {
@@ -38,6 +38,10 @@ export default function Navbar ({setDisplay,setLogConnexion,setRegister}) {
 
     const showRegister = ()=>{
         setRegister (true)
+    }
+
+    const showIcon = ()=>{
+        setSearchBar(true)
     }
 
     return(
@@ -70,10 +74,10 @@ export default function Navbar ({setDisplay,setLogConnexion,setRegister}) {
                <button id="btn--open--register" onClick={showRegister}>Inscription</button>
                
                <div className='icons'>
-               <div className='icon--search'>
+               <div className='icon--search' onClick={showIcon}>
                <i className="fa-solid fa-magnifying-glass"></i>
                </div>
-               <div className='icon--menu' onClick={afficher}>
+               <div className='icon--menu' onClick={showMenu}>
                <i className="fa-solid fa-bars"></i>
                </div>
                </div>

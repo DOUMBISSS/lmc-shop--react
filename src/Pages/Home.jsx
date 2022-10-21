@@ -20,6 +20,7 @@ export default function Home (){
     const [cartShop , setCartShop] = useState(false);
     const [logConnexion , setLogConnexion] = useState(false);
     const [Register,setRegister] = useState (false);
+    const [searchBar,setSearchBar] = useState(false);
 
     const affi = ()=> {
         setDisplay (false)
@@ -46,6 +47,10 @@ export default function Home (){
         setRegister(false)
     }
 
+    const closeSearchBar = ()=>{
+        setSearchBar(false)
+    }
+
      // 'https://api.escuelajs.co/api/v1/products'
          
   useEffect(() => {
@@ -56,7 +61,7 @@ export default function Home (){
 
     return (
         <div>
-            <Navbar display={display} setDisplay={setDisplay} setLogConnexion={setLogConnexion} setRegister={setRegister}/>
+            <Navbar display={display} setDisplay={setDisplay} setLogConnexion={setLogConnexion} setRegister={setRegister} setSearchBar={setSearchBar}/>
             <div className="main--part">
                 <div className="box">
                     <h1>Beneficiez de vos articles preferes en gros et en details</h1>
@@ -92,17 +97,30 @@ export default function Home (){
 
                 <div className={display ? "sidebar show--sidebar" : "sidebar"}>
                     <div className='sidebar--menu'>
-                        <div className='btn--close--sidebar' onClick={affi}>X</div>
+                        <div className='btn--close--sidebar' onClick={affi}>
+                            <i className="fa-solid fa-xmark"></i>
+                        </div>
                     {categories.map((categorie,i) => <p><li key={i} ><Link className='liste' to={`/category/${categorie}`}>{categorie}</Link></li></p>
                     ) }
                         </div>
                     </div>
 
+                <div className={searchBar ? "navbar--search openSearchBar" : "navbar--search"}>
+                    <div className='navbar--search--block'>
+                    <input type="text" name="" id="searchBar" placeholder="Rechercher un produit..."/>
+                    <div className="btn--close--searchBar" onClick={closeSearchBar}>
+                        <i className="fa-solid fa-xmark"></i>
+                    </div>
+                    </div>
+                </div>
+
             <div className={logConnexion ? "login--part--connexion show--login--part--connexion" : "login--part--connexion"}>
                 <div className="login--part--container">
                     <div className="login--part--container--header">
                         <p className="name--log">Connexion</p>
-                        <div className="btn--close--login" onClick={closeLogCO}>X</div>
+                        <div className="btn--close--login" onClick={closeLogCO}>
+                            <i className="fa-solid fa-xmark"></i>
+                            </div>
                     </div>
                     <div className="login--part--container--content">
                         <p>Vous n'avez pas de compte ? <span className="new">Inscrivez-vous</span></p> 
@@ -135,7 +153,9 @@ export default function Home (){
                 <div className="login--part--container">
                     <div className="login--part--container--header">
                         <p className="name--log">Inscription</p>
-                        <div className="btn--close--register" onClick={closeRegister}>X</div>
+                        <div className="btn--close--register" onClick={closeRegister}>
+                        <i className="fa-solid fa-xmark"></i>
+                        </div>
                     </div>
                     <div className="login--part--container--content">
                         <p>Vous n'avez pas de compte ? <span className="new">Connectez-vous</span></p> 

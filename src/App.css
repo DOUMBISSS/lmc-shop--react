@@ -872,7 +872,6 @@ footer{
   flex-wrap: wrap;
   justify-content: space-between;
  }
-
  /*----------------------------------Login part connexion----------*/
  .login--part--connexion{
     position: absolute;
@@ -1037,7 +1036,6 @@ footer{
   font-size: 1.6rem;
   padding-left: 10px;
 }
-
  /*----------------------------------Login part inscription----------*/
 
   /*----------------------------------  part----Paiement --------------------*/
@@ -1133,8 +1131,6 @@ footer{
     background-color: white;
   }
     /*----------------------------------  part----Paiement --------------------*/
-
-
  /*----------------------------------  part----commande --------------------*/
  .main--orders{
   background-color: #f1f1f1;
@@ -1269,7 +1265,6 @@ footer{
  /*---------------------------------- part----commande --------------------*/
 
   /*---------------------------------- part----password --------------------*/
-
  .main--password--container--right--content{
   width: 100%;
   background-color: white;
@@ -1302,28 +1297,6 @@ footer{
 .filter{
   display: none;
 }
-/* #mores{
-  width: 100%;
-  height: 100%;
-  color: black;
-  margin-top: 30px;
-  font-weight: normal;
-  text-decoration: underline;
-  visibility: hidden;
-  transform: rotateY(-200%);
-  transition: ease-in 1s;
-  background-color: var(--blue);
-  opacity: 0.3;
-  position:absolute;
-  right: 0;
-  left: 0;
-}
-.overlay #mores{
-  opacity: 0.5;
-  visibility: visible;
-  transform: rotateY(0%);
-  transition: ease-in 0.5s;
-} */
 .left--part--container{
   position: fixed;
   left : -1000px;
@@ -1371,7 +1344,6 @@ border-radius: 10px;
   border-radius: 5px;
   background-color: #e4e5e8;
   border-radius: 10px;
-  /* margin-bottom: 2rem; */
   }
 .box--header{
   padding: 2px;
@@ -1421,26 +1393,9 @@ border-radius: 10px;
   width: 100%;
   margin-bottom: 10px;
 }
-.navbar--container{
-  position: fixed;
-  top: 0;
-  right: -400px;
-  background-color: white;
-  width: 250px;
-  height: 100vh;
-  z-index: 20000;
-  padding: 1.5rem;
-  transition: ease-in 0.5s;
-}
-.openSidebar.navbar--container{
+.openSearchBar{
   right: 0;
   transition: ease-in 0.5s;
-}
-.navbar--container--block{
-  width: 100%;
-}
-.navbar--container--block ul li{
-  padding: 10px;
 }
 .btn--close--navbar{
   width: 20px;
@@ -1464,15 +1419,16 @@ border-radius: 10px;
   height: 100px;
   z-index: 20000;
   padding: 0.5rem;
-  transition: ease-in 0.5s;
+  transition: ease-in 1s;
   visibility: hidden;
 }
 .navbar--search--block{
   display: flex;
   align-items: center;
+  justify-content: center;
 }
-#searchbar{
-  width: 90%;
+#searchBar{
+  width: 100%;
   height: 4rem;
   padding: 10px;
   background-color: rgb(240, 239, 239);
@@ -1488,20 +1444,17 @@ border-radius: 10px;
   height: 20px;
   cursor: pointer;
 }
-.openSearchbar.navbar--search{
-  right: 0;
-  transition: ease-in 0.5s;
-  visibility: visible;
-}
 .icons{
   display: none;
 }
 .icon--search{
   width: 50%;
   height: 100%;
-  align-items: center;
   display: flex;
+  align-items: center;
   justify-content: center;
+  padding: 1rem;
+  cursor: pointer;
 }
 .icon--menu{
   width: 50%;
@@ -1511,7 +1464,6 @@ border-radius: 10px;
   justify-content: center;
   cursor: pointer;
 }
-
 .sidebar {
   position: fixed;
   width: 300px;
@@ -1571,10 +1523,8 @@ border-radius: 10px;
 .filterbar--content{
   width: 90%;
   height: 90%;
-
 }
 
-/*--------articles details*/
 .main--articles{
   width: 100%;
   height: 700px;
@@ -1601,7 +1551,6 @@ border-radius: 10px;
   align-items: center;
   justify-content: center;
   border: 1px solid rgb(235, 230, 230);
-
  }
  .images--container img{
   width: 55%;
@@ -2436,22 +2385,26 @@ margin-bottom: 10px;
 .navbar--search{
 position: fixed;
 top: 0;
-right: -400px;
+right: -2000px;
 background-color: white;
 width: 100%;
-height: 100px;
+height: 50px;
 z-index: 20000;
-padding: 0.5rem;
+padding: 1rem;
 transition: ease-in 0.5s;
-visibility: hidden;
 }
 .navbar--search--block{
 display: flex;
 align-items: center;
 }
+.openSearchBar{
+  right: 0;
+  transition: ease-in 0.5s;
+  visibility:visible;
+  }
 #searchbar{
-width: 90%;
-height: 4rem;
+width: 100%;
+height: 1rem;
 padding: 10px;
 background-color: rgb(240, 239, 239);
 border: none;
@@ -2466,16 +2419,6 @@ width: 20px;
 height: 20px;
 cursor: pointer;
 }
-.openSearchbar.navbar--search{
-right: 0;
-transition: ease-in 0.5s;
-visibility: visible;
-}
-
-
-
-
-
 
  @media only screen and (max-width:576px) {
   header{
