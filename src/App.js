@@ -13,7 +13,7 @@ import Details from './Pages/Details';
 function App() {
   return (
     <div>
-    <Routes>
+  <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path='/commandes' element={<Commandes/>} />
     <Route path='/details/:id' element={<Details/>} />

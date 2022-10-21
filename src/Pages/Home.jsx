@@ -38,6 +38,13 @@ export default function Home (){
         setCartShop(false)
     }
 
+    const closeLogCO = ()=>{
+        setLogConnexion (false)
+    }
+
+    const closeRegister = ()=>{
+        setRegister(false)
+    }
 
      // 'https://api.escuelajs.co/api/v1/products'
          
@@ -95,7 +102,7 @@ export default function Home (){
                 <div className="login--part--container">
                     <div className="login--part--container--header">
                         <p className="name--log">Connexion</p>
-                        <div className="btn--close--login">X</div>
+                        <div className="btn--close--login" onClick={closeLogCO}>X</div>
                     </div>
                     <div className="login--part--container--content">
                         <p>Vous n'avez pas de compte ? <span className="new">Inscrivez-vous</span></p> 
@@ -128,7 +135,7 @@ export default function Home (){
                 <div className="login--part--container">
                     <div className="login--part--container--header">
                         <p className="name--log">Inscription</p>
-                        <div className="btn--close--register">X</div>
+                        <div className="btn--close--register" onClick={closeRegister}>X</div>
                     </div>
                     <div className="login--part--container--content">
                         <p>Vous n'avez pas de compte ? <span className="new">Connectez-vous</span></p> 
@@ -191,7 +198,7 @@ export default function Home (){
                                     <div className="cart--articles--descriptions">
                                         <div className="block--articles">
                                             <div className="articles">
-                                                <img src="images/jupe.png" alt=""/>
+                                                <img src={`${process.env.REACT_APP_DOMAIN}jupe.png`} alt=""/>
                                             </div>
                         
                                             <div className="articles--details">
@@ -239,7 +246,7 @@ export default function Home (){
                         <a href="article-details.html">
                         <div className="card--product--image">
                             <div className="card--product--image--box">
-                            <img src={homeArticle.image} alt=""/>
+                          <Link to={`/details/${homeArticle.id}`}>  <img src={homeArticle.image} alt=""/></Link>
                             </div>
                         </div>
                     </a>
