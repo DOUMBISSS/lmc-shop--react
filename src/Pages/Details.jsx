@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 
 
 export default function Details (){
+
+    let id = useParams().id
     
     return (
         <div>
@@ -35,12 +37,14 @@ export default function Details (){
 
         <div className="main--content--right">
             <div className="main--content--right--block">
-                <h2>Jupe</h2>
-            <p className="price--per--unit"> F / Unité</p>
+                <h2>{categoryArticle.title}</h2>
+            <p className="price--per--unit">{categoryArticle.price} F / Unité</p>
 
-                <p className="details--articles">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l
+            <p className="details--articles">{categoryArticle.description}</p>
+
+                {/* <p className="details--articles">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l
                     abore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                <p className="sale"><i>Vente en gros à partir de 7 unités*</i></p>
+                <p className="sale"><i>Vente en gros à partir de 7 unités*</i></p> */}
             <div className="block--button">
                 <div className="btn--cart--add">Ajouter au panier</div>
                 <div className="btn--cart--buy"><Link to="/paiement">Achetez</Link></div>

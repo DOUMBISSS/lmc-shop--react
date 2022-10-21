@@ -1,6 +1,6 @@
 
 const initialState = {
-    homeArticles:[]
+    homeArticles:[],
 }
 
 export function homeArticleReducer (state = initialState, action){

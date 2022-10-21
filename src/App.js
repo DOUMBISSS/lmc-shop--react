@@ -21,7 +21,6 @@ function App() {
     <Route path='/password' element={<Password/>} />
     <Route path='/paiement' element={<Paiement/>} />
     <Route path='/category/:slug' element={<ArticleCategory/>} />
-    
   </Routes>
     </div>
   );

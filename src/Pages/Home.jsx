@@ -13,10 +13,13 @@ export default function Home (){
     const homeArticles = useSelector(state => state.homeArticleReducer.homeArticles);
     const categories = useSelector(state => state.categoryReducer.categories);
     const dispatch = useDispatch("");
+    
 
     const [display ,setDisplay] = useState(false);
     const [filter,setFilter] = useState(false);
     const [cartShop , setCartShop] = useState(false);
+    const [logConnexion , setLogConnexion] = useState(false);
+    const [Register,setRegister] = useState (false);
 
     const affi = ()=> {
         setDisplay (false)
@@ -46,7 +49,7 @@ export default function Home (){
 
     return (
         <div>
-            <Navbar display={display} setDisplay={setDisplay}/>
+            <Navbar display={display} setDisplay={setDisplay} setLogConnexion={setLogConnexion} setRegister={setRegister}/>
             <div className="main--part">
                 <div className="box">
                     <h1>Beneficiez de vos articles preferes en gros et en details</h1>
@@ -88,14 +91,14 @@ export default function Home (){
                         </div>
                     </div>
 
-            <div className="login--part--connexion">
+            <div className={logConnexion ? "login--part--connexion show--login--part--connexion" : "login--part--connexion"}>
                 <div className="login--part--container">
                     <div className="login--part--container--header">
                         <p className="name--log">Connexion</p>
                         <div className="btn--close--login">X</div>
                     </div>
                     <div className="login--part--container--content">
-                        {/* <p>Vous n'avez pas de compte ? <span className="new">Inscrivez-vous</span></p> 
+                        <p>Vous n'avez pas de compte ? <span className="new">Inscrivez-vous</span></p> 
 
                         <div className="type--of--connexion">
                             <div className="google">
@@ -112,7 +115,7 @@ export default function Home (){
                             <input type="password" name="" id="password" placeholder="Mot de passe"/>
                         <button id="btn--connexion">Se connecter</button>
                         </div>
-                        <p className="password" >Mot de passe oublie </p> */}
+                        <p className="password" >Mot de passe oublie </p>
 
                     </div>
 
@@ -120,7 +123,8 @@ export default function Home (){
                 
             </div> 
 
-            <div className="register--part">
+
+            <div className={Register ? "register--part shows--register--part" : "register--part"}>
                 <div className="login--part--container">
                     <div className="login--part--container--header">
                         <p className="name--log">Inscription</p>

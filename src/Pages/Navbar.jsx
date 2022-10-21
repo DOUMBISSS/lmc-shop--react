@@ -4,7 +4,7 @@ import {Link, useParams} from 'react-router-dom';
 import { getCategory, getCategoryArticles } from '../Redux/actions';
 
 
-export default function Navbar ({setDisplay,display}) {
+export default function Navbar ({setDisplay,setLogConnexion,setRegister}) {
     const categories = useSelector(state => state.categoryReducer.categories);
 
     let slug = useParams().slug;
@@ -30,8 +30,6 @@ export default function Navbar ({setDisplay,display}) {
     },[slug])
 
             
-    const [logConnexion , setLogConnexion] = useState(false);
-    const [Register,setRegister] = useState (false);
 
     const afficher = () =>{
         setDisplay(true)
@@ -69,9 +67,8 @@ export default function Navbar ({setDisplay,display}) {
                        <option value="">USD</option>
                        <option value="">STD</option>
                    </select>
-            <div className={logConnexion ? "login--part--connexion show--login--part--connexion" : "login--part--connexion"}></div>
+          
                <button id="btn--open--login" onClick={ShowLogCo} >Connexion</button>
-            <div className={Register ? "register--part shows--register--part" : "register--part"}></div>
                <button id="btn--open--register" onClick={showRegister}>Inscription</button>
                
                <div className='icons'>
