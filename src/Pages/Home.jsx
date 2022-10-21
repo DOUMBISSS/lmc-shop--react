@@ -13,7 +13,7 @@ export default function Home (){
     const homeArticles = useSelector(state => state.homeArticleReducer.homeArticles);
     const categories = useSelector(state => state.categoryReducer.categories);
     const dispatch = useDispatch("");
-    
+
 
     const [display ,setDisplay] = useState(false);
     const [filter,setFilter] = useState(false);
@@ -221,7 +221,7 @@ export default function Home (){
 
                 <div className="right--part">
                     <div className="filter"onClick={showFilter}>
-                        <i class="fa-solid fa-arrow-up-wide-short"></i>
+                        <i className="fa-solid fa-arrow-up-wide-short"></i>
                         <p>Filtre</p>
                     </div>
                 <div className={filter ? "filterbar show--filterbar" : "filterbar"}>
@@ -253,7 +253,7 @@ export default function Home (){
                                 <p className="prices"> {homeArticle.price} F CFA<span> / a partir de 5 unités</span></p>
                             </div>
                             <div className="button--block">
-                                <button className="btn--buy"><Link to={`details/${homeArticle.id}`}>ACHETER</Link></button>
+                                <button className="btn--buy"><Link to={`/details/${homeArticle.id}`}>ACHETER</Link></button>
                                 <button className="btn--add">+</button>
                             </div>
                             
@@ -266,7 +266,7 @@ export default function Home (){
             )};
                
             </div>
-            <div class="more">
+            <div className="more">
                 <button>Voir plus</button>
             </div>
 

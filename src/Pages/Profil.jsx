@@ -21,7 +21,7 @@ export default function Profil (){
                             </div>
                               <label className="form-label">Votre nom</label>
                                 <input type="text" placeholder="votre nom"/>
-                              <div class="mb-3">
+                              <div className="mb-3">
                                 <label>Bio</label>
                                 <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                               </div>
@@ -73,7 +73,7 @@ export default function Profil (){
                     </div>
                 </div>
 
-                 {/* <div class="main--paiement--container--content--box1">
+                 {/* <div className="main--paiement--container--content--box1">
                     </div>  */}
                 </div>
         </div>

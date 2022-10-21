@@ -14,10 +14,8 @@ export default function Navbar ({setDisplay,setLogConnexion,setRegister}) {
     useEffect(() => {  
         fetch('https://fakestoreapi.com/products/categories')
         .then(res => res.json())
-        .then(categories => {
-            dispatch(getCategory(categories))
-            })
-        }, []);
+        .then(categories => {dispatch(getCategory(categories))
+        })}, []);
 
     useEffect(() =>{
 

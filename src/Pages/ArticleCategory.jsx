@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getCategoryArticles } from "../Redux/actions";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
@@ -10,8 +10,6 @@ import Navbar from "./Navbar";
 export default function ArticleCategory(){
     const slug = useParams().slug;
     const categoryArticles = useSelector (state => state.categoryReducer.categoryArticles);
-    
-
 
     return (
         <div>
@@ -44,7 +42,7 @@ export default function ArticleCategory(){
                                 <p className="prices"> {categoryArticle.price}<span> / a partir de 5 unités</span></p>
                             </div>
                             <div className="button--block">
-                                <button className="btn--buy"><a href="article-details.html">Achetez</a></button>
+                                <button className="btn--buy"><Link to={`/details/${categoryArticle.id}`}>ACHETER</Link></button>
                                 <button className="btn--add">+</button>
                             </div>
                             

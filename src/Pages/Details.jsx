@@ -1,4 +1,7 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import {getHomeArticle } from "../Redux/actions";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
@@ -6,7 +9,23 @@ import Navbar from "./Navbar";
 
 export default function Details (){
 
-    let id = useParams().id
+    let id = useParams().id;
+
+    const homeArticles = useSelector(state => state.homeArticleReducer.homeArticles);
+    const dispatch = useDispatch();
+
+    // useEffect(() =>{
+    //     fetch(`https://fakestoreapi.com/products/${id}`)
+    //     .then(res=>res.json())
+    //     .then(json=> console.log(json))
+    //         },[id]);
+    //  console.log(homeArticles)
+
+    useEffect(() =>{
+        fetch(`https://fakestoreapi.com/products/${id}`)
+        .then(res => res.json())
+        .then(homeArticles => {dispatch(getHomeArticle(homeArticles))
+        })},[id]);
     
     return (
         <div>
@@ -15,32 +34,32 @@ export default function Details (){
             <div className="main--content">
             <div className="main--content--left">
                 <div className="images--container">
-                    <img src="" alt=""/>
+                    <img src={homeArticles.image} alt=""/>
                 </div>
                 <div className="images--container--content">
                     <div className="images--thumbails">
-                        <img src="" alt=""/>
+                        <img src={homeArticles.image} alt=""/>
                     </div>
-                    <div class="images--thumbails">
-                        <img src="" alt=""/>
+                    <div className="images--thumbails">
+                        <img src={homeArticles.image} alt=""/>
                     </div>
 
                     <div className="images--thumbails">
-                        <img src="" alt=""/>
+                        <img src={homeArticles.image} alt=""/>
                     </div>
 
-                    <div class="images--thumbails">
-                        <img src="" alt=""/>
+                    <div className="images--thumbails">
+                        <img src={homeArticles.image} alt=""/>
                     </div>
                 </div>
         </div>
 
         <div className="main--content--right">
             <div className="main--content--right--block">
-                <h2>{categoryArticle.title}</h2>
-            <p className="price--per--unit">{categoryArticle.price} F / Unité</p>
+                <h2>{homeArticles.title}</h2>
+            <p className="price--per--unit">{homeArticles.price} F / Unité</p>
 
-            <p className="details--articles">{categoryArticle.description}</p>
+            <p className="details--articles">{homeArticles.description}</p>
 
                 {/* <p className="details--articles">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l
                     abore et dolore magna aliqua. Ut enim ad minim veniam</p>
