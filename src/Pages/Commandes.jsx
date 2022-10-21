@@ -1,5 +1,6 @@
 // import Navbar from "./Navbar";
 // import Footer from "./Footer";
+import {Link} from 'react-router-dom';
 
 
 export default function Commande (){
@@ -9,9 +10,10 @@ export default function Commande (){
             <div className="main--orders--container">
                 <div className="main--orders--container--left">
                         <ul>
-                            <a href="profil.html"><li>Profil</li></a>
-                            <a href="password.html"><li>Changer de mot de passe</li></a>
-                            <a href="Commande.html"><li>Mes commandes</li></a>
+
+                            <Link className = "liste" to="/profil"><li>Profil</li></Link>
+                            <Link className = "liste" to="/password"><li>Changer de mot de passe</li></Link>
+                            <Link className = "liste" to="/commandes"><li>Mes commandes</li></Link>
                         </ul>
 
                 </div>

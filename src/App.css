@@ -608,7 +608,7 @@ footer{
   justify-content: center;
   cursor: pointer;
  }
-/* -------------------------------------------------hfhfhf */
+/* ------------------------------------------------------------------------------------------------------------------next step-----------hfhfhf */
 .main--container{
   padding: 10px 80px 0 80px;
 }
@@ -710,7 +710,6 @@ footer{
   align-items: center;
   justify-content: center;
   border: 1px solid rgb(235, 230, 230);
-
  }
  .images--container img{
   width: 55%;
@@ -739,7 +738,6 @@ footer{
  }
  .main--content--right{
   width: 42%;
-  /* height: ; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -824,7 +822,6 @@ footer{
  .first--part{
   height: 350px;
   border-radius: 5px;
-  /* background-image: url("../images/Untitled-4.jpg"); */
   background-color: black;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1037,7 +1034,6 @@ footer{
   padding-left: 10px;
 }
  /*----------------------------------Login part inscription----------*/
-
   /*----------------------------------  part----Paiement --------------------*/
   .main--paiement{
     background-color: #f1f1f1;
@@ -1160,10 +1156,6 @@ footer{
  .main--orders--container--left > ul li:hover{
  color: var(--blue);
  }
- .main--orders--container--left > ul  a{
-  text-decoration: none;
-  color: black;
- }
  .main--orders--container--right{
   width: 73%;
   border-radius: 5px;
@@ -1202,8 +1194,7 @@ footer{
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-  padding: 2rem;
-  
+  padding: 2rem;  
 }
  .box--file{
   margin: 0rem 0 2rem;
@@ -1470,7 +1461,7 @@ border-radius: 10px;
   height: 100vh;
   top: 0;
   right: -1500px;
-  padding: 1rem;
+  padding: 0;
   display:flex;
   align-items: center;
   justify-content: center;
@@ -1485,9 +1476,10 @@ border-radius: 10px;
 }
 .sidebar--menu{
   width: 90%;
-  height: 90%;
+  height: 95%;
   display: block;
   font-weight: bold;
+  text-align: center;
 }
 .sidebar--menu > p{
  padding: 1rem;
@@ -1524,7 +1516,6 @@ border-radius: 10px;
   width: 90%;
   height: 90%;
 }
-
 .main--articles{
   width: 100%;
   height: 700px;
@@ -1593,7 +1584,6 @@ border-radius: 10px;
   color: var(--blue);
   font-weight: bold;
  }
-
  .block--button{
   width: 65%;
   height: 50px;
@@ -1613,36 +1603,12 @@ border-radius: 10px;
   align-items: center;
   justify-content: center;
  }
- .btn--cart--buy{
-  width: 40%;
-  height: 100%;
-  border-radius: 5px;
-  background-color: var(--blue);
-  cursor: pointer;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
- }
- .btn--cart--buy > a{
-  color: white;
- }
- .btn--cart--buy > a:hover{
-  color: var(--blue);
- }
  .btn--cart--add:hover{
   border-radius: 5px;
   background-color: white;
   color: var(--pink);
   cursor: pointer;
   border: 2px solid var(--pink);
- }
- .btn--cart--buy:hover{
-  border-radius: 5px;
-  background-color: white;
-  border: 2px solid var(--blue);
-  color: var(--blue);
-  cursor: pointer;
  }
  .details--articles{
   width: 100%;
@@ -1654,8 +1620,6 @@ border-radius: 10px;
   margin-bottom: 20px;
   color: var(--text-gray);
  }
- /*---------------------*/
-
  .aside{
   position: fixed;
   z-index: 1000;
@@ -1732,7 +1696,6 @@ border-radius: 10px;
   display: flex;
   align-items: center;
 }
-
 .cart--description > p{
   color: var(--blue);
  }
@@ -1935,7 +1898,6 @@ width: 100%;
 height: 40px;
 border-radius: 5px;
 margin-bottom: 10px;
-/* outline: none; */
 border: 1px solid #9b9ca9;
 font-size: 1.6rem;
 padding-left: 10px;
@@ -1966,7 +1928,6 @@ display: flex;
 align-items:center;
 }
 /*----------------------------------Login part connexion----------*/
-
 /*----------------------------------  part----Paiement --------------------*/
 .main--paiement{
   background-color: #f1f1f1;
@@ -2060,8 +2021,6 @@ input[type="radio"]{
   background-color: white;
 }
   /*----------------------------------  part----Paiement --------------------*/
-
-
 /*----------------------------------  part----commande --------------------*/
 .main--orders{
 background-color: #f1f1f1;
@@ -2134,7 +2093,6 @@ display: flex;
 flex-direction: column;
 margin-bottom: 20px;
 padding: 2rem;
-
 }
 .box--file{
 margin: 0rem 0 2rem;
@@ -2194,9 +2152,7 @@ font-weight: bold;
 cursor: pointer;
 }
 /*---------------------------------- part----commande --------------------*/
-
 /*---------------------------------- part----password --------------------*/
-
 .main--password--container--right--content{
 width: 100%;
 background-color: white;
@@ -2229,28 +2185,6 @@ cursor: pointer;
 .filter{
 display: none;
 }
-/* #mores{
-width: 100%;
-height: 100%;
-color: black;
-margin-top: 30px;
-font-weight: normal;
-text-decoration: underline;
-visibility: hidden;
-transform: rotateY(-200%);
-transition: ease-in 1s;
-background-color: var(--blue);
-opacity: 0.3;
-position:absolute;
-right: 0;
-left: 0;
-}
-.overlay #mores{
-opacity: 0.5;
-visibility: visible;
-transform: rotateY(0%);
-transition: ease-in 0.5s;
-} */
 .left--part--container{
 position: fixed;
 left : -1000px;
@@ -2298,7 +2232,6 @@ overflow: auto;
 border-radius: 5px;
 background-color: #e4e5e8;
 border-radius: 10px;
-/* margin-bottom: 2rem; */
 }
 .box--header{
 padding: 2px;
@@ -2347,27 +2280,6 @@ border: 1px solid #9b9ca9;
 display: flex;
 width: 100%;
 margin-bottom: 10px;
-}
-.navbar--container{
-position: fixed;
-top: 0;
-right: -400px;
-background-color: white;
-width: 250px;
-height: 100vh;
-z-index: 20000;
-padding: 1.5rem;
-transition: ease-in 0.5s;
-}
-.openSidebar.navbar--container{
-right: 0;
-transition: ease-in 0.5s;
-}
-.navbar--container--block{
-width: 100%;
-}
-.navbar--container--block ul li{
-padding: 10px;
 }
 .btn--close--navbar{
 width: 20px;
@@ -2435,7 +2347,7 @@ cursor: pointer;
     height: 100%;
   }
   .header--right{
-    width: 55%;
+    width: 60%;
     display: flex;
     justify-content: center;
   }
@@ -2448,10 +2360,10 @@ cursor: pointer;
     display: none;
   }
   .icons{
-    width: 40%;
+    width: 45%;
     align-items: center;
     display: flex;
-    justify-content:space-between;
+    justify-content:space-around;
   }
   .icon--search{
     height: 40%;
@@ -2761,6 +2673,4 @@ cursor: pointer;
   width: 100%;
   border-top: none;
 }
-
-
  }
