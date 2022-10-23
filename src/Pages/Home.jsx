@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-
+import { ProductCart } from './ProductCart';
 
 
 export default function Home (){
@@ -17,7 +17,6 @@ export default function Home (){
 
     const [display ,setDisplay] = useState(false);
     const [filter,setFilter] = useState(false);
-    const [cartShop , setCartShop] = useState(false);
     const [logConnexion , setLogConnexion] = useState(false);
     const [Register,setRegister] = useState (false);
     const [searchBar,setSearchBar] = useState(false);
@@ -30,13 +29,6 @@ export default function Home (){
     }
     const showFilter =()=>{
         setFilter (true)
-    }
-
-    const showCart = ()=>{
-        setCartShop(true);
-    }
-    const closeCart = ()=>{
-        setCartShop(false)
     }
 
     const closeLogCO = ()=>{
@@ -184,61 +176,8 @@ export default function Home (){
                 </div>
             </div>
 
+            <ProductCart/>
 
-
-            <div className="aside">
-                <div >
-                    <div className="cart--icon" onClick={showCart}>
-                        <i className="fa-solid fa-bag-shopping"></i>
-                        <div className="counter">1</div>
-                    </div>
-                    <div className={cartShop ? "cart--container OpenCart" : "cart--container"}>
-                        {/* <h3>Your card is empty</h3> */}
-                        <div className="cart--container--block">
-                            <div className="cart--container--header">
-                                <div className="cart--description">
-                                    <i className="fa-solid fa-bag-shopping"></i>
-                                    <p className="numbers--articles">1 articles</p>
-                                </div>
-                                <div className="btn--close" onClick={closeCart}>
-                                    <i className="fa-solid fa-xmark"></i>
-                                </div>
-                            </div>
-                        
-                            <div className="cart--container--content">
-                                <div className="cart--articles">
-                                    <div className="button-block">
-                                        <div className="handle--quantity">
-                                        <div className="minus"><h5>-</h5></div>
-                                        <div className="qty"><h5>1</h5></div>
-                                        <div className="plus"><h5>+</h5></div>
-                                        </div>
-                                    </div>
-                        
-                                    <div className="cart--articles--descriptions">
-                                        <div className="block--articles">
-                                            <div className="articles">
-                                                <img src={`${process.env.REACT_APP_DOMAIN}jupe.png`} alt=""/>
-                                            </div>
-                        
-                                            <div className="articles--details">
-                                                <p className="names--articles">Jupe volante</p>
-                                                <p className="price--articles"> 2000 F</p>
-                                                <p className="quantity">3 unités</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                        
-                                    <div className="btn--remove--article">
-                                        <i className="fa-solid fa-xmark"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-        
-                    </div>
-                </div>
-            </div>
 
             <div className="container">
                 <div className="left--part">

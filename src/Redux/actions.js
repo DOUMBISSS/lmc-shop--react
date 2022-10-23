@@ -20,3 +20,16 @@ export function getCategory (categories){
     }
 }
 
+export function AddArticle (articles) {
+    return {
+      type: "ADD-ARTICLE",
+      payload: articles,
+    }
+  }
+
+  export function DeleteArticle(id){
+    return {
+      type: "DELETE-ARTICLE",
+      payload: id,
+    }
+  }
