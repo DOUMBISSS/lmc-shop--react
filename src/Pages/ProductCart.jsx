@@ -1,10 +1,11 @@
 import React, { useState } from "react"
+import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { AddArticle } from "../Redux/actions"
+import { AddArticle, DeleteArticle } from "../Redux/actions"
 
 export function ProductCart () {
 
-  // const carts = useSelector(state => state.cartReducer.carts)
+  const carts = useSelector(state => state.cartReducer.carts)
   const dispatch = useDispatch()
 
   const addToCart = (articles) => {
@@ -19,6 +20,18 @@ export function ProductCart () {
   const closeCart = ()=>{
     setCartShop(false)
   }
+
+  const removeArticle = (id) =>{
+    alert('fafaf')
+    // dispatch(DeleteArticle(id))
+  }
+
+
+//   useEffect(()=>{
+//     fetch('https://fakestoreapi.com/carts')
+//     .then(res=>res.json())
+//     .then(json=>console.log(json))
+//   })
 
   return (
     <div>
@@ -42,14 +55,14 @@ export function ProductCart () {
                             </div>
                         
                             <div className="cart--container--content">
-                             {/* {carts.map((carts,i)=>  */}
+                             {/* {carts.map((cart,i)=>  */}
                              
                              <div className="cart--articles">
                                     <div className="button-block">
                                         <div className="handle--quantity">
                                         <div className="minus"><h5>-</h5></div>
                                         <div className="qty"><h5>1</h5></div>
-                                        {/* <div className="plus" onClick={() => addToCart(carts)}><h5>+</h5></div> */}
+                                        {/* <div className="plus" onClick={() => addToCart(cart)}><h5>+</h5></div> */}
                                         </div>
                                     </div>
                         
@@ -67,7 +80,7 @@ export function ProductCart () {
                                         </div>
                                     </div>
                         
-                                    <div className="btn--remove--article">
+                                    <div className="btn--remove--article" onClick={removeArticle}>
                                         <i className="fa-solid fa-xmark"></i>
                                     </div>
                                 </div>

@@ -15,15 +15,9 @@ export default function Home (){
     const dispatch = useDispatch("");
 
 
-    const [display ,setDisplay] = useState(false);
     const [filter,setFilter] = useState(false);
-    const [logConnexion , setLogConnexion] = useState(false);
-    const [Register,setRegister] = useState (false);
-    const [searchBar,setSearchBar] = useState(false);
+    
 
-    const affi = ()=> {
-        setDisplay (false)
-    }
     const closeFilter = ()=> {
         setFilter (false)
     }
@@ -31,17 +25,6 @@ export default function Home (){
         setFilter (true)
     }
 
-    const closeLogCO = ()=>{
-        setLogConnexion (false)
-    }
-
-    const closeRegister = ()=>{
-        setRegister(false)
-    }
-
-    const closeSearchBar = ()=>{
-        setSearchBar(false)
-    }
 
      // 'https://api.escuelajs.co/api/v1/products'
          
@@ -53,7 +36,7 @@ export default function Home (){
 
     return (
         <div>
-            <Navbar display={display} setDisplay={setDisplay} setLogConnexion={setLogConnexion} setRegister={setRegister} setSearchBar={setSearchBar}/>
+            <Navbar/>
             <div className="main--part">
                 <div className="box">
                     <h1>Beneficiez de vos articles preferes en gros et en details</h1>
@@ -87,94 +70,7 @@ export default function Home (){
             </div>
 
 
-                <div className={display ? "sidebar show--sidebar" : "sidebar"}>
-                    <div className='sidebar--menu'>
-                        <div className='btn--close--sidebar' onClick={affi}>
-                            <i className="fa-solid fa-xmark"></i>
-                        </div>
-                    {categories.map((categorie,i) => <p><li key={i} ><Link className='liste' to={`/category/${categorie}`}>{categorie}</Link></li></p>
-                    ) }
-                        </div>
-                    </div>
-
-                <div className={searchBar ? "navbar--search openSearchBar" : "navbar--search"}>
-                    <div className='navbar--search--block'>
-                    <input type="text" name="" id="searchBar" placeholder="Rechercher un produit..."/>
-                    <div className="btn--close--searchBar" onClick={closeSearchBar}>
-                        <i className="fa-solid fa-xmark"></i>
-                    </div>
-                    </div>
-                </div>
-
-            <div className={logConnexion ? "login--part--connexion show--login--part--connexion" : "login--part--connexion"}>
-                <div className="login--part--container">
-                    <div className="login--part--container--header">
-                        <p className="name--log">Connexion</p>
-                        <div className="btn--close--login" onClick={closeLogCO}>
-                            <i className="fa-solid fa-xmark"></i>
-                            </div>
-                    </div>
-                    <div className="login--part--container--content">
-                        <p>Vous n'avez pas de compte ? <span className="new">Inscrivez-vous</span></p> 
-
-                        <div className="type--of--connexion">
-                            <div className="google">
-                                <p>Connexion avec google</p>
-                            </div>
-                            <div className="facebook">
-                                <p>Connexion avec facebook</p>
-                            </div>
-                        </div>
-                        <p>ou</p>
-
-                        <div className="block---connexion">
-                            <input type="email" name="" id="email" placeholder="Adresse email"/>
-                            <input type="password" name="" id="password" placeholder="Mot de passe"/>
-                        <button id="btn--connexion">Se connecter</button>
-                        </div>
-                        <p className="password" >Mot de passe oublie </p>
-
-                    </div>
-
-                </div>
-                
-            </div> 
-
-
-            <div className={Register ? "register--part shows--register--part" : "register--part"}>
-                <div className="login--part--container">
-                    <div className="login--part--container--header">
-                        <p className="name--log">Inscription</p>
-                        <div className="btn--close--register" onClick={closeRegister}>
-                        <i className="fa-solid fa-xmark"></i>
-                        </div>
-                    </div>
-                    <div className="login--part--container--content">
-                        <p>Vous n'avez pas de compte ? <span className="new">Connectez-vous</span></p> 
-
-                        <div className="type--of--connexion">
-                            <div className="google">
-                                <p>Connexion avec google</p>
-                            </div>
-                            <div className="facebook">
-                                <p>Connexion avec facebook</p>
-                            </div>
-                        </div>
-                        <p>ou</p>
-
-                        <div className="block---connexion">
-                            <input type="text" name="" placeholder="Nom"/>
-                            <input type="text" name="" id="" placeholder="Prenom"/>
-                            <input type="email" name="" id="email" placeholder="Adresse email"/>
-                            <input type="password" name="" id="password" placeholder="Mot de passe"/>
-                            <select name="" id="adresse"><option value="">Pays</option></select>
-                            <select name="" id="adresse"><option value="">Ville</option></select>
-                        <button id="btn--connexion">S'inscrire</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+             
 
             <ProductCart/>
 
