@@ -1,16 +1,13 @@
 import React, { useState } from "react"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { AddArticle, DeleteArticle } from "../Redux/actions"
+import {AddArticle, DeleteArticle } from "../Redux/actions"
 
 export function ProductCart () {
 
   const carts = useSelector(state => state.cartReducer.carts)
   const dispatch = useDispatch()
 
-  const addToCart = (articles) => {
-    dispatch(AddArticle(articles))
-  }
 
   const [cartShop , setCartShop] = useState(false);
   
@@ -22,16 +19,9 @@ export function ProductCart () {
   }
 
   const removeArticle = (id) =>{
-    alert('fafaf')
-    // dispatch(DeleteArticle(id))
+    dispatch(DeleteArticle(id))
   }
-
-
-//   useEffect(()=>{
-//     fetch('https://fakestoreapi.com/carts')
-//     .then(res=>res.json())
-//     .then(json=>console.log(json))
-//   })
+ 
 
   return (
     <div>
@@ -39,10 +29,10 @@ export function ProductCart () {
                 <div >
                     <div className="cart--icon" onClick={showCart}>
                         <i className="fa-solid fa-bag-shopping"></i>
-                        <div className="counter">1</div>
+                        <div className="counter">0</div>
                     </div>
                     <div className={cartShop ? "cart--container OpenCart" : "cart--container"}>
-                        {/* <h3>Your card is empty</h3> */}
+                        {/* <h3>Your cart is empty</h3> */}
                         <div className="cart--container--block">
                             <div className="cart--container--header">
                                 <div className="cart--description">
@@ -55,26 +45,26 @@ export function ProductCart () {
                             </div>
                         
                             <div className="cart--container--content">
-                             {/* {carts.map((cart,i)=>  */}
-                             
-                             <div className="cart--articles">
+                             {carts.map((cart)=> <div key={cart.id} className="cart--articles">
                                     <div className="button-block">
                                         <div className="handle--quantity">
                                         <div className="minus"><h5>-</h5></div>
                                         <div className="qty"><h5>1</h5></div>
-                                        {/* <div className="plus" onClick={() => addToCart(cart)}><h5>+</h5></div> */}
+                                        <div className="plus"><h5>+</h5></div>
                                         </div>
                                     </div>
                         
                                     <div className="cart--articles--descriptions">
                                         <div className="block--articles">
                                             <div className="articles">
-                                                <img src={`${process.env.REACT_APP_DOMAIN}jupe.png`} alt=""/>
+                                                {/* <img src={`${process.env.REACT_APP_DOMAIN}jupe.png`} alt=""/> */}
+                                                <img src={cart.image} alt="" />
+
                                             </div>
                         
                                             <div className="articles--details">
-                                                <p className="names--articles">Jupe volante</p>
-                                                <p className="price--articles"> 2000 F</p>
+                                                <p className="names--articles">{cart.title}</p>
+                                                <p className="price--articles"> {cart.price} F</p>
                                                 <p className="quantity">3 unités</p>
                                             </div>
                                         </div>
@@ -84,7 +74,7 @@ export function ProductCart () {
                                         <i className="fa-solid fa-xmark"></i>
                                     </div>
                                 </div>
-                             {/* )} */}
+                             )}
                             </div>
                         </div>
         

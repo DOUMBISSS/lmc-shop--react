@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { getCategoryArticles } from "../Redux/actions";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import { ProductCart } from "./ProductCart";
 
 
 
@@ -20,7 +21,7 @@ export default function ArticleCategory(){
                  <p>{slug}</p>
                 </div>
             </div>
-
+            <ProductCart/>
             <div className="second--part">
                 <div className="second--part--content">
                 {categoryArticles.map((categoryArticle) => <div key={categoryArticle.id} className="card">

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Footer from "./Footer";
-import { getHomeArticle } from '../Redux/actions';
+import { AddArticle, getHomeArticle } from '../Redux/actions';
 import Navbar from "./Navbar";
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -11,7 +11,6 @@ import { ProductCart } from './ProductCart';
 export default function Home (){
 
     const homeArticles = useSelector(state => state.homeArticleReducer.homeArticles);
-    const categories = useSelector(state => state.categoryReducer.categories);
     const dispatch = useDispatch("");
 
 
@@ -25,8 +24,10 @@ export default function Home (){
         setFilter (true)
     }
 
-
-     // 'https://api.escuelajs.co/api/v1/products'
+    const addToCart = (homeArticles) => {
+        dispatch(AddArticle(homeArticles))
+      }
+    
          
   useEffect(() => {
     fetch('https://fakestoreapi.com/products?limit=12')
@@ -68,12 +69,7 @@ export default function Home (){
                         
                 </div>
             </div>
-
-
-             
-
             <ProductCart/>
-
 
             <div className="container">
                 <div className="left--part">
@@ -98,13 +94,12 @@ export default function Home (){
             <div className="right--part--content">
             {homeArticles.map((homeArticle) => <div key={homeArticle.id} className="card">
                     <div className="card--product">
-                        <a href="article-details.html">
                         <div className="card--product--image">
                             <div className="card--product--image--box">
                           <Link to={`/details/${homeArticle.id}`}>  <img src={homeArticle.image} alt=""/></Link>
                             </div>
                         </div>
-                    </a>
+                        
                         <div className="card--product--content">
                             <div className="name--product">
                                 <p>{homeArticle.title}</p>
@@ -116,24 +111,18 @@ export default function Home (){
                             </div>
                             <div className="button--block">
                                 <button className="btn--buy"><Link to={`/details/${homeArticle.id}`}>ACHETER</Link></button>
-                                <button className="btn--add">+</button>
+                                <button className="btn--add" onClick={() => addToCart(homeArticle.id)}>+</button>
                             </div>
-                            
                         </div>
-
                     </div>
-
-
                 </div>
-            )};
-               
+            )}; 
             </div>
-            <div className="more">
-                <button>Voir plus</button>
-            </div>
+                <div className="more">
+                    <button>Voir plus</button>
+                </div>
 
             </div>
-
             </div>
             <Footer/>
         </div>

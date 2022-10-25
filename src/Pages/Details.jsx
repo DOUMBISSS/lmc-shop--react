@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
@@ -14,12 +15,11 @@ export default function Details (){
     const homeArticles = useSelector(state => state.homeArticleReducer.homeArticles);
     const dispatch = useDispatch();
 
-    // useEffect(() =>{
-    //     fetch(`https://fakestoreapi.com/products/${id}`)
-    //     .then(res=>res.json())
-    //     .then(json=> console.log(json))
-    //         },[id]);
-    //  console.log(homeArticles)
+
+
+    const handleclick = () =>{
+       alert('fghjh')
+    }
 
     useEffect(() =>{
         fetch(`https://fakestoreapi.com/products/${id}`)
@@ -38,18 +38,7 @@ export default function Details (){
                 </div>
                 <div className="images--container--content">
                     <div className="images--thumbails">
-                        <img src={homeArticles.image} alt=""/>
-                    </div>
-                    <div className="images--thumbails">
-                        <img src={homeArticles.image} alt=""/>
-                    </div>
-
-                    <div className="images--thumbails">
-                        <img src={homeArticles.image} alt=""/>
-                    </div>
-
-                    <div className="images--thumbails">
-                        <img src={homeArticles.image} alt=""/>
+                        <img key ={id} src={homeArticles.image} onClick={()=>handleclick(id)} alt=""/>
                     </div>
                 </div>
         </div>
@@ -72,9 +61,9 @@ export default function Details (){
         </div>
 
     </div>
-        <h3>Articles connexes</h3>
+        {/* <h3>Articles connexes</h3>
         <div className="second--part--content">
-            {/* <div className="card">
+            <div className="card">
                 <div className="card--product">
                     <a href="article-details.html">
                     <div className="card--product--image">
@@ -102,9 +91,9 @@ export default function Details (){
 
                 </div>
 
-            </div> */}
+            </div>
 
-        </div>
+        </div> */}
     </div>
             <Footer/>
         </div>
