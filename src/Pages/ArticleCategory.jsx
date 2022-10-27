@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { getCategoryArticles } from "../Redux/actions";
+import { AddArticle } from "../Redux/actions";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import { ProductCart } from "./ProductCart";
@@ -11,6 +11,11 @@ import { ProductCart } from "./ProductCart";
 export default function ArticleCategory(){
     const slug = useParams().slug;
     const categoryArticles = useSelector (state => state.categoryReducer.categoryArticles);
+
+    const dispatch = useDispatch("");
+    const addToCart = (id) => {
+        dispatch(AddArticle(id))
+      }
 
     return (
         <div>
@@ -44,7 +49,7 @@ export default function ArticleCategory(){
                             </div>
                             <div className="button--block">
                                 <button className="btn--buy"><Link to={`/details/${categoryArticle.id}`}>ACHETER</Link></button>
-                                <button className="btn--add">+</button>
+                                <button className="btn--add" onClick={() => addToCart(categoryArticle.id)}>+</button>
                             </div>
                             
                         </div>

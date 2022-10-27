@@ -11,7 +11,7 @@ import { ProductCart } from './ProductCart';
 export default function Home (){
 
     const homeArticles = useSelector(state => state.homeArticleReducer.homeArticles);
-    const dispatch = useDispatch("");
+    const dispatch = useDispatch();
 
 
     const [filter,setFilter] = useState(false);
@@ -24,16 +24,16 @@ export default function Home (){
         setFilter (true)
     }
 
-    const addToCart = (homeArticles) => {
-        dispatch(AddArticle(homeArticles))
+    const addToCart = (id) => {
+        dispatch(AddArticle(id))
       }
-    
+    console.log(homeArticles)
          
   useEffect(() => {
     fetch('https://fakestoreapi.com/products?limit=12')
     .then(res => res.json())
     .then(homeArticles => {dispatch(getHomeArticle(homeArticles))
-    })}, []);
+    })}, [dispatch]);
 
     return (
         <div>
@@ -44,7 +44,7 @@ export default function Home (){
 
                     <p>Achetez et faite vous livrer vos colis en Cote d'Ivoire , au Burkina Faso , au Liberia et en Sierra Leone</p>
 
-                    <button className="buy">Achetez maintenant</button>
+                    <button className="btn--buy--article">Achetez maintenant</button>
                 </div>
             </div>
             <div className="categories">

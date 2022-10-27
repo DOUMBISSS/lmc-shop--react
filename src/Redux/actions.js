@@ -20,10 +20,10 @@ export function getCategory (categories){
     }
 }
 
-export function AddArticle (articles) {
+export function AddArticle (id) {
     return {
       type: "ADD-ARTICLE",
-      payload: articles,
+      payload: id,
     }
   }
 

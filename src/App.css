@@ -186,7 +186,7 @@ a:hover{
 h1{
   margin-bottom: 25px;
 }
-.buy{
+.btn--buy--article{
   padding: 10px;
   width: 200px;
   background-color: var(--pink);

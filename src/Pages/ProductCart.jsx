@@ -25,8 +25,8 @@ export function ProductCart () {
 
   return (
     <div>
-         <div className="aside">
-                <div >
+        <div className="aside">
+                <div>
                     <div className="cart--icon" onClick={showCart}>
                         <i className="fa-solid fa-bag-shopping"></i>
                         <div className="counter">0</div>
@@ -80,7 +80,7 @@ export function ProductCart () {
         
                     </div>
                 </div>
-            </div>
+          </div>
     </div>
   )
 }
