@@ -25,7 +25,6 @@ export function getCategory (categories){
         payload : categories
     }
 }
-
 export function AddArticle (id) {
     return {
       type: "ADD-ARTICLE",
@@ -40,9 +39,9 @@ export function AddArticle (id) {
     }
   }
 
-export function AddCart(id){
+export function getUserCart(cart){
   return {
-    type:"ADD-CART",
-    payload :id
+    type:"GET-USER-CART",
+    payload :cart
   }
 }

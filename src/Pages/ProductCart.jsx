@@ -2,16 +2,21 @@ import React, { useState } from "react"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
-import {AddArticle, DeleteArticle } from "../Redux/actions"
-import { cartReducer } from "../Redux/cartReducer"
+import {DeleteArticle, getUserCart,AddArticle } from "../Redux/actions"
 
 export function ProductCart () {
 
     let id = useParams().id;
 
   const carts = useSelector(state => state.cartReducer.carts)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
+//   for (let products of carts){
+//     console.log(products)
+//   }
+//   for (let i=0; i<carts.length;i++){
+//     console.log(carts[1])
+// }
 
   const [cartShop , setCartShop] = useState(false);
   
@@ -25,13 +30,22 @@ export function ProductCart () {
   const removeArticle = (id) =>{
     dispatch(DeleteArticle(id))
   }
+
+    const decreaseQty = ()=>{
+        dispatch(AddArticle(id))
+    }
+    const increaseQty = ()=>{
+        dispatch(AddArticle(id))
+    }
+
+
  
-  useEffect(() =>{
-    fetch(`https://fakestoreapi.com/carts/user/2`)
-    .then(res => res.json())
-    .then(carts => {dispatch(cartReducer(carts))
-    })  
-},[id]);
+//   useEffect(() =>{
+//     fetch('https://fakestoreapi.com/carts/user/2')
+//     .then(res => res.json())
+//     .then(carts => {dispatch(getUserCart(carts))
+//     })  
+// },[]);
 
 // useEffect(() =>{
 //     fetch('https://fakestoreapi.com/carts/2',{
@@ -71,12 +85,12 @@ export function ProductCart () {
                             </div>
                         
                             <div className="cart--container--content">
-                             {carts.map((cart)=> <div key={cart.id} className="cart--articles">
+                             {carts.map((cart,i)=> <div key={i} className="cart--articles">
                                     <div className="button-block">
                                         <div className="handle--quantity">
-                                        <div className="minus"><h5>-</h5></div>
-                                        <div className="qty"><h5>1</h5></div>
-                                        <div className="plus"><h5>+</h5></div>
+                                        <div className="minus" onClick={()=>decreaseQty(cart)}><h5>-</h5></div>
+                                        <div className="qty"><h5>{cart.qty}</h5></div>
+                                        <div className="plus" onClick={()=>increaseQty(cart)}><h5>+</h5></div>
                                         </div>
                                     </div>
                         
@@ -90,8 +104,8 @@ export function ProductCart () {
                         
                                             <div className="articles--details">
                                                 <p className="names--articles">{cart.title}</p>
-                                                <p className="price--articles"> {cart.price} F</p>
-                                                <p className="quantity">{cart.quantity} unité (s)</p>
+                                                <p className="price--articles"> {cart.price *cart.qty} F</p>
+                                                <p className="quantity">{cart.qty} unité (s)</p>
                                             </div>
                                         </div>
                                     </div>

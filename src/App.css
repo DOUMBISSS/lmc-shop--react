@@ -1756,6 +1756,9 @@ border-radius: 10px;
     height: 80%;
     display: flex;
  }
+ .rating{
+  color: var(--text-gray);
+ }
 
  /*----------------------------------Login part connexion----------*/
 .login--part--connexion{

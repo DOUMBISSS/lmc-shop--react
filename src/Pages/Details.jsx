@@ -2,23 +2,24 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import {getArticle, getHomeArticle } from "../Redux/actions";
+import {AddArticle, getArticle, getHomeArticle } from "../Redux/actions";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import { ProductCart } from "./ProductCart";
 
 
 
 export default function Details (){
 
     let id = useParams().id;
-
+    
+    const addToCart = (id) => {
+        dispatch(AddArticle(id))
+      }
   
 
     const article = useSelector(state => state.homeArticleReducer.article);
     const dispatch = useDispatch();
-
-    // console.log(article)
-    // console.log(homeArticles)
 
     const handleclick = () =>{
        alert('fghjh')
@@ -47,19 +48,18 @@ export default function Details (){
                     </div>
                 </div>
         </div>
-
+        <ProductCart/>
         <div className="main--content--right">
             <div className="main--content--right--block">
                 <h2>{article.title}</h2>
             <p className="price--per--unit">{article.price} F / Unité</p>
 
             <p className="details--articles">{article.description}</p>
+            <p className="rating">Rating {article.rating && article.rating.rate}
+            <i className="fa fa-star"></i></p>
 
-                {/* <p className="details--articles">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l
-                    abore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                <p className="sale"><i>Vente en gros à partir de 7 unités*</i></p> */}
             <div className="block--button">
-                <div className="btn--cart--add">Ajouter au panier</div>
+                <div className="btn--cart--add"onClick={() => addToCart(article)}>Ajouter au panier</div>
                 <div className="btn--cart--buy"><Link to="/paiement">Achetez</Link></div>
             </div>
             </div>
