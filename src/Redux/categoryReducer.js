@@ -9,7 +9,6 @@ export function categoryReducer (state = initialState, action){
         case "GET-CATEGORIES": {
             return {...state,categories: action.payload}
         }
-        
         case "GET-CAT-ARTICLES":{
             return {...state,categoryArticles:action.payload}
         }

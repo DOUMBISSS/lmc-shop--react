@@ -15,6 +15,10 @@ export function cartReducer (state = initialState, action) {
         newState.splice(index, 1);
         return {...state, carts: [...newState]};
       }
+
+    case "ADD-CART":{
+      return {...state,carts: [...state.carts, action.payload]}
+    }
     
     default:
       return state

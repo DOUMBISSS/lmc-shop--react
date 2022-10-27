@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import {getHomeArticle } from "../Redux/actions";
+import {getArticle, getHomeArticle } from "../Redux/actions";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
@@ -12,10 +12,13 @@ export default function Details (){
 
     let id = useParams().id;
 
-    const homeArticles = useSelector(state => state.homeArticleReducer.homeArticles);
+  
+
+    const article = useSelector(state => state.homeArticleReducer.article);
     const dispatch = useDispatch();
 
-
+    // console.log(article)
+    // console.log(homeArticles)
 
     const handleclick = () =>{
        alert('fghjh')
@@ -24,9 +27,11 @@ export default function Details (){
     useEffect(() =>{
         fetch(`https://fakestoreapi.com/products/${id}`)
         .then(res => res.json())
-        .then(homeArticles => {dispatch(getHomeArticle(homeArticles))
-        })},[id]);
-    
+        .then(article => {dispatch(getArticle(article))
+        })  
+    },[id]);
+
+  
     return (
         <div>
             <Navbar/>
@@ -34,21 +39,21 @@ export default function Details (){
             <div className="main--content">
             <div className="main--content--left">
                 <div className="images--container">
-                    <img src={homeArticles.image} alt=""/>
+                    <img src={article.image} alt=""/>
                 </div>
                 <div className="images--container--content">
                     <div className="images--thumbails">
-                        <img key ={id} src={homeArticles.image} onClick={()=>handleclick(id)} alt=""/>
+                        <img key ={id} src={article.image} onClick={()=>handleclick(id)} alt=""/>
                     </div>
                 </div>
         </div>
 
         <div className="main--content--right">
             <div className="main--content--right--block">
-                <h2>{homeArticles.title}</h2>
-            <p className="price--per--unit">{homeArticles.price} F / Unité</p>
+                <h2>{article.title}</h2>
+            <p className="price--per--unit">{article.price} F / Unité</p>
 
-            <p className="details--articles">{homeArticles.description}</p>
+            <p className="details--articles">{article.description}</p>
 
                 {/* <p className="details--articles">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l
                     abore et dolore magna aliqua. Ut enim ad minim veniam</p>

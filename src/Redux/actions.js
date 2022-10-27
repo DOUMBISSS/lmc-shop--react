@@ -5,6 +5,12 @@ export function getHomeArticle(articles){
     }
 }
 
+export function getArticle(article){
+  return{
+      type:"GET-ARTICLE",
+      payload :article
+  }
+}
 
 export function getCategoryArticles(articles){
     return{
@@ -33,3 +39,10 @@ export function AddArticle (id) {
       payload: id,
     }
   }
+
+export function AddCart(id){
+  return {
+    type:"ADD-CART",
+    payload :id
+  }
+}

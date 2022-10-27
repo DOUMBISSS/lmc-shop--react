@@ -442,7 +442,6 @@ footer{
   color : white;
 }
 .counter{
-  
   width: 25px;
   height: 25px;
   background-color: var(--pink);
@@ -587,18 +586,18 @@ footer{
  }
  .names--articles{
   color: var(--text-gray);
-  font-size: 1.5rem;
+  font-size: 1rem;
  }
  .price--articles{
   color: var(--blue);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-top: 3px;
   font-weight: bold;
  }
  .quantity{
   color: var(--text-gray);
   margin-top: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
  }
  .btn--remove--article{
   width: 15%;
@@ -1757,44 +1756,7 @@ border-radius: 10px;
     height: 80%;
     display: flex;
  }
- .articles{
-  width: 43%;
-  height: 100%;
- }
- .articles--details{
-  width: 57%;
-  height: 100%;
- }
- .articles img{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  height: 90%;
- }
- .names--articles{
-  color: var(--text-gray);
-  font-size: 1.5rem;
- }
- .price--articles{
-  color: var(--blue);
-  font-size: 1.5rem;
-  margin-top: 3px;
-  font-weight: bold;
- }
- .quantity{
-  color: var(--text-gray);
-  margin-top: 0.5rem;
-  font-size: 1.5rem;
- }
- .btn--remove--article{
-  width: 15%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
- }
+
  /*----------------------------------Login part connexion----------*/
 .login--part--connexion{
   position: absolute;

@@ -96,7 +96,7 @@ export default function Home (){
                     <div className="card--product">
                         <div className="card--product--image">
                             <div className="card--product--image--box">
-                          <Link to={`/details/${homeArticle.id}`}>  <img src={homeArticle.image} alt=""/></Link>
+                          <Link to={`/details/${homeArticle.id}`}><img src={homeArticle.image} alt=""/></Link>
                             </div>
                         </div>
                         
@@ -111,7 +111,7 @@ export default function Home (){
                             </div>
                             <div className="button--block">
                                 <button className="btn--buy"><Link to={`/details/${homeArticle.id}`}>ACHETER</Link></button>
-                                <button className="btn--add" onClick={() => addToCart(homeArticle.id)}>+</button>
+                                <button className="btn--add" onClick={() => addToCart(homeArticle)}>+</button>
                             </div>
                         </div>
                     </div>

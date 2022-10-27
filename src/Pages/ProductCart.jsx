@@ -1,9 +1,13 @@
 import React, { useState } from "react"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { useParams } from "react-router-dom"
 import {AddArticle, DeleteArticle } from "../Redux/actions"
+import { cartReducer } from "../Redux/cartReducer"
 
 export function ProductCart () {
+
+    let id = useParams().id;
 
   const carts = useSelector(state => state.cartReducer.carts)
   const dispatch = useDispatch()
@@ -22,6 +26,28 @@ export function ProductCart () {
     dispatch(DeleteArticle(id))
   }
  
+  useEffect(() =>{
+    fetch(`https://fakestoreapi.com/carts/user/2`)
+    .then(res => res.json())
+    .then(carts => {dispatch(cartReducer(carts))
+    })  
+},[id]);
+
+// useEffect(() =>{
+//     fetch('https://fakestoreapi.com/carts/2',{
+//             method:"PUT",
+//             body:JSON.stringify(
+//                 {
+//                     userId:2,
+//                     date:2019-12-10,
+//                     products:[{productId:2,quantity:6}]
+//                 }
+//             )
+//         })
+//     .then(res => res.json())
+//     .then(carts => {dispatch(cartReducer(carts))
+//     })  
+// },[]);
 
   return (
     <div>
@@ -29,7 +55,7 @@ export function ProductCart () {
                 <div>
                     <div className="cart--icon" onClick={showCart}>
                         <i className="fa-solid fa-bag-shopping"></i>
-                        <div className="counter">0</div>
+                        <div className="counter">{carts.length}</div>
                     </div>
                     <div className={cartShop ? "cart--container OpenCart" : "cart--container"}>
                         {/* <h3>Your cart is empty</h3> */}
@@ -37,7 +63,7 @@ export function ProductCart () {
                             <div className="cart--container--header">
                                 <div className="cart--description">
                                     <i className="fa-solid fa-bag-shopping"></i>
-                                    <p className="numbers--articles">1 articles</p>
+                                    <p className="numbers--articles">{carts.length} articles</p>
                                 </div>
                                 <div className="btn--close" onClick={closeCart}>
                                     <i className="fa-solid fa-xmark"></i>
@@ -65,7 +91,7 @@ export function ProductCart () {
                                             <div className="articles--details">
                                                 <p className="names--articles">{cart.title}</p>
                                                 <p className="price--articles"> {cart.price} F</p>
-                                                <p className="quantity">3 unités</p>
+                                                <p className="quantity">{cart.quantity} unité (s)</p>
                                             </div>
                                         </div>
                                     </div>
