@@ -97,9 +97,7 @@ export function ProductCart () {
                                     <div className="cart--articles--descriptions">
                                         <div className="block--articles">
                                             <div className="articles">
-                                                {/* <img src={`${process.env.REACT_APP_DOMAIN}jupe.png`} alt=""/> */}
                                                 <img src={cart.image} alt="" />
-
                                             </div>
                         
                                             <div className="articles--details">
