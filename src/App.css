@@ -1758,13 +1758,14 @@ border-radius: 10px;
  }
  .rating{
   color: var(--text-gray);
+  margin-top: 1rem;
  }
 
  /*----------------------------------Login part connexion----------*/
 .login--part--connexion{
   position: absolute;
   width: 480px;
-  height: 600px;
+  height: 450px;
   z-index: 10000;
   border-radius: 5px;
   background-color: white;

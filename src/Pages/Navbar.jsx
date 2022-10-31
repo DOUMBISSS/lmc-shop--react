@@ -2,14 +2,16 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {Link, useParams} from 'react-router-dom';
 import { getCategory, getCategoryArticles } from '../Redux/actions';
+import UserLogin from './UserLogin';
+import UserRegister from './UserRegister';
 
 
 export default function Navbar () {
     const categories = useSelector(state => state.categoryReducer.categories);
     const [display ,setDisplay] = useState(false);
-    const [logConnexion , setLogConnexion] = useState(false);
     const [Register,setRegister] = useState (false);
     const [searchBar,setSearchBar] = useState(false);
+    const [logConnexion , setLogConnexion]=useState(false);
 
     let slug = useParams().slug;
 
@@ -49,14 +51,6 @@ export default function Navbar () {
     }
     const affi = ()=> {
         setDisplay (false)
-    }
-    
-    const closeLogCO = ()=>{
-        setLogConnexion (false)
-    }
-
-    const closeRegister = ()=>{
-        setRegister(false)
     }
 
     const closeSearchBar = ()=>{
@@ -125,75 +119,8 @@ export default function Navbar () {
                     </div>
                 </div>
 
-            <div className={logConnexion ? "login--part--connexion show--login--part--connexion" : "login--part--connexion"}>
-                <div className="login--part--container">
-                    <div className="login--part--container--header">
-                        <p className="name--log">Connexion</p>
-                        <div className="btn--close--login" onClick={closeLogCO}>
-                            <i className="fa-solid fa-xmark"></i>
-                            </div>
-                    </div>
-                    <div className="login--part--container--content">
-                        <p>Vous n'avez pas de compte ? <span className="new">Inscrivez-vous</span></p> 
-
-                        <div className="type--of--connexion">
-                            <div className="google">
-                                <p>Connexion avec google</p>
-                            </div>
-                            <div className="facebook">
-                                <p>Connexion avec facebook</p>
-                            </div>
-                        </div>
-                        <p>ou</p>
-
-                        <div className="block---connexion">
-                            <input type="email" name="" id="email" placeholder="Adresse email"/>
-                            <input type="password" name="" id="password" placeholder="Mot de passe"/>
-                        <button id="btn--connexion">Se connecter</button>
-                        </div>
-                        <p className="password" >Mot de passe oublie </p>
-
-                    </div>
-
-                </div>
-                
-            </div> 
-
-
-            <div className={Register ? "register--part shows--register--part" : "register--part"}>
-                <div className="login--part--container">
-                    <div className="login--part--container--header">
-                        <p className="name--log">Inscription</p>
-                        <div className="btn--close--register" onClick={closeRegister}>
-                        <i className="fa-solid fa-xmark"></i>
-                        </div>
-                    </div>
-                    <div className="login--part--container--content">
-                        <p>Vous n'avez pas de compte ? <span className="new">Connectez-vous</span></p> 
-
-                        <div className="type--of--connexion">
-                            <div className="google">
-                                <p>Connexion avec google</p>
-                            </div>
-                            <div className="facebook">
-                                <p>Connexion avec facebook</p>
-                            </div>
-                        </div>
-                        <p>ou</p>
-
-                        <div className="block---connexion">
-                            <input type="text" name="" placeholder="Nom"/>
-                            <input type="text" name="" id="" placeholder="Prenom"/>
-                            <input type="email" name="" id="email" placeholder="Adresse email"/>
-                            <input type="password" name="" id="password" placeholder="Mot de passe"/>
-                            <select name="" id="adresse"><option value="">Pays</option></select>
-                            <select name="" id="adresse"><option value="">Ville</option></select>
-                        <button id="btn--connexion">S'inscrire</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+           <UserLogin logConnexion={logConnexion} setLogConnexion={setLogConnexion}/>
+           <UserRegister Register={Register} setRegister={setRegister}/>
       
        
    </header>

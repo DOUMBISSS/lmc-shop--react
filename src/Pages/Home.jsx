@@ -27,7 +27,7 @@ export default function Home (){
     const addToCart = (id) => {
         dispatch(AddArticle(id))
       }
-    console.log(homeArticles)
+    // console.log(homeArticles)
          
   useEffect(() => {
     fetch('https://fakestoreapi.com/products?limit=12')

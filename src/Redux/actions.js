@@ -45,3 +45,17 @@ export function getUserCart(cart){
     payload :cart
   }
 }
+
+export function getUser(user){
+  return {
+    type:"GET-USER",
+    payload:user
+  }
+}
+
+// export function getNewUser(user){
+//   return {
+//     type:"GET-NEW-USER",
+//     payload:user
+//   }
+// }

@@ -13,6 +13,7 @@ export function cartReducer (state = initialState, action) {
     if (index>=0) {
       state.carts[index].qty += 1
     }
+    // else {{const temp = {...action.payload, qty: 1}}
       return {
         ...state,carts: [...state.carts, {...action.payload, qty: 1}],
       }
@@ -32,8 +33,3 @@ export function cartReducer (state = initialState, action) {
       return state
   }
 }
-
-// export default function (
-//   incrementQuantity,
-//   decrementQuantity
-// )
