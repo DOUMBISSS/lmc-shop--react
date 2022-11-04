@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# LMC SHOP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Lmc shop est une plateforme qui permet de réaliser des ventes en ligne ,développé par un groupe de jeune dynamique.
+Le site présente diverses articles tels que le monde de la mode , l'electroniques et les bijoux...
 
 ## Available Scripts
 
