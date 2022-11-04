@@ -59,7 +59,7 @@ export default function Details (){
             <i className="fa fa-star"></i></p>
 
             <div className="block--button">
-                <div className="btn--cart--add"onClick={() => addToCart(article)}>Ajouter au panier</div>
+                <div className="btn--cart--add" onClick={() => addToCart(article)}>Ajouter au panier</div>
                 <div className="btn--cart--buy"><Link to="/paiement">Achetez</Link></div>
             </div>
             </div>
