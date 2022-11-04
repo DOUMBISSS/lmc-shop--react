@@ -17,7 +17,7 @@ Lmc Shop est un projet open source
 .React
 
 ### Lien
-Open [http://doumbisss.github.io/lmc-shop--react]
+Ouvrir [http://doumbisss.github.io/lmc-shop--react] dans votre navigateur .
 
 
 
