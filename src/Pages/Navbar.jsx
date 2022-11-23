@@ -66,7 +66,7 @@ export default function Navbar () {
            </div>
    
            <div className="header--logo">
-              <Link to="/"> <img src={`${process.env.REACT_APP_DOMAIN}Groupe-1.png`} alt=""/></Link>
+              <Link to="/"> <img src={`${process.env.PUBLIC_URL}/Groupe-1.png`} alt=""/></Link>
            </div>
    
            <div className="header--right">

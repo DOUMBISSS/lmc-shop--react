@@ -73,8 +73,6 @@ export default function Profil (){
                     </div>
                 </div>
 
-                 {/* <div className="main--paiement--container--content--box1">
-                    </div>  */}
                 </div>
         </div>
     )
